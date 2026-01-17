@@ -16,7 +16,8 @@
 
 /* HIDE ORDER PANEL */
 .checkout-drawer.collapsed {
-    transform: translateY(75%);
+    transform: translateY(85%); /* completely hidden when collapsed */
+
 }
 
 /* SMOOTH ANIMATION */
@@ -367,6 +368,10 @@
         <span id="items-count">0 Items</span>
         <span id="total-amount">Total: ₹0</span>
     </div>
+    <div id="delivery-charge" style="margin-top:6px;font-size:14px;">
+    Delivery Charge: ₹0
+</div>
+
 
     <div class="location-card" id="location-card">
         <div id="loc-text" style="font-size: 14px; font-weight: 700; color: var(--pp-red);">📍 Location Required</div>
@@ -393,6 +398,18 @@
 </div>
 
 <script>
+    function getDeliveryCharge(total) {
+    if (total >= 80 && total <= 499) return 39;
+    if (total >= 500 && total <= 999) return 79;
+    if (total >= 1000 && total <= 2499) return 99;
+    if (total >= 2500 && total <= 4999) return 139;
+    if (total >= 5000 && total <= 10000) return 179;
+    if (total > 10000) return 199;
+    return 0;
+}
+
+    const MIN_ORDER_AMOUNT = 80;
+
     let userCoords = null;
 
     function zoomImage(element) {
@@ -477,36 +494,55 @@
     }
 
     function calculateCart() {
-        let total = 0, count = 0;
-        document.querySelectorAll('.product-card').forEach(card => {
-            const qty = parseInt(card.querySelector('.qty-val').innerText);
-            if (qty > 0) {
-                total += (parseInt(card.getAttribute('data-price')) * qty);
-                count += qty;
-            }
-        });
-        document.getElementById('cart-summary').style.display = count > 0 ? 'flex' : 'none';
-        document.getElementById('items-count').innerText = `${count} Items`;
-        document.getElementById('total-amount').innerText = `Total: ₹${total}`;
-        validateForm();
-    }
-    document.getElementById("checkoutDrawer").classList.remove("collapsed");
+    let total = 0, count = 0;
 
-
-    function validateForm() {
-        const name = document.getElementById('cust_name').value;
-        const phone = document.getElementById('cust_phone').value;
-        const btn = document.getElementById('order-btn');
-        const count = parseInt(document.getElementById('items-count').innerText);
-        if (name && phone && userCoords && count > 0) {
-            btn.disabled = false;
-            btn.classList.add('active');
-            btn.innerText = "PLACE ORDER VIA WHATSAPP";
-        } else {
-            btn.disabled = true;
-            btn.classList.remove('active');
+    document.querySelectorAll('.product-card').forEach(card => {
+        const qty = parseInt(card.querySelector('.qty-val').innerText);
+        if (qty > 0) {
+            total += (parseInt(card.getAttribute('data-price')) * qty);
+            count += qty;
         }
+    });
+
+    const delivery = getDeliveryCharge(total);
+    const grandTotal = total + delivery;
+
+    document.getElementById('cart-summary').style.display = count > 0 ? 'flex' : 'none';
+    document.getElementById('items-count').innerText = `${count} Items`;
+    document.getElementById('total-amount').innerText = `Total: ₹${total}`;
+    document.getElementById('delivery-charge').innerText = `Delivery Charge: ₹${delivery}`;
+
+    validateForm();
+}
+
+
+   function validateForm() {
+    const name = document.getElementById('cust_name').value;
+    const phone = document.getElementById('cust_phone').value;
+    const btn = document.getElementById('order-btn');
+
+    const totalText = document.getElementById('total-amount').innerText;
+    const total = parseInt(totalText.replace(/\D/g, ''));
+
+    if (!name || !phone || !userCoords) {
+        btn.disabled = true;
+        btn.classList.remove('active');
+        btn.innerText = "COMPLETE DETAILS TO ORDER";
+        return;
     }
+
+    if (total < MIN_ORDER_AMOUNT) {
+        btn.disabled = true;
+        btn.classList.remove('active');
+        btn.innerText = "MINIMUM ORDER ₹80";
+        return;
+    }
+
+    btn.disabled = false;
+    btn.classList.add('active');
+    btn.innerText = "PLACE ORDER VIA WHATSAPP";
+}
+
 
     function sendOrder() {
     const name = document.getElementById('cust_name').value;
@@ -533,6 +569,9 @@
     }
 
     const mapsLink = `https://www.google.com/maps?q=${userCoords.lat},${userCoords.lng}`;
+    const delivery = getDeliveryCharge(total);
+const grandTotal = total + delivery;
+
 
     const text =
 `*🛒 PPCART ORDER BILL*
@@ -543,17 +582,17 @@
 *Items Ordered:*
 ${list}${otherText}
 ----------------------
-*TOTAL AMOUNT: ₹${total}*
+*Subtotal:* ₹${total}
+*Delivery Charge:* ₹${delivery}
+*GRAND TOTAL:* ₹${grandTotal}
 
 📍 *Delivery Location:*
 ${mapsLink}
 
 ⚡ Fast Delivery in 15–20 mins`;
-
-    window.open(
-        `https://wa.me/919302073835?text=${encodeURIComponent(text)}`,
-        '_blank'
-    );
+const whatsappNumber = "919302073835"; // ← YOUR NUMBER
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+    window.open(whatsappURL, "_blank");
 }
 let drawerOpen = false;
 
