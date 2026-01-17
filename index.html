@@ -365,11 +365,29 @@
     <div class="slide-handle" onclick="toggleDrawer()"></div>
 
     <div class="cart-summary" id="cart-summary">
-        <span id="items-count">0 Items</span>
-        <span id="total-amount">Total: ₹0</span>
+    <span id="items-count">0 Items</span>
+
+    <div style="text-align:right;">
+        <div id="total-amount" style="font-size:17px;font-weight:700;">
+            Subtotal: ₹0
+        </div>
+
+        <div id="delivery-charge"
+            style="font-size:15px;font-weight:800;color:#fff;
+            background:rgba(255,255,255,0.25);
+            padding:4px 10px;border-radius:8px;
+            display:inline-block;margin-top:4px;">
+            Delivery: ₹0
+        </div>
+
+        <div id="grand-total"
+            style="margin-top:6px;
+            font-size:19px;
+            font-weight:900;
+            color:#fff;">
+            Grand Total: ₹0
+        </div>
     </div>
-    <div id="delivery-charge" style="margin-top:6px;font-size:14px;">
-    Delivery Charge: ₹0
 </div>
 
 
@@ -509,8 +527,10 @@
 
     document.getElementById('cart-summary').style.display = count > 0 ? 'flex' : 'none';
     document.getElementById('items-count').innerText = `${count} Items`;
-    document.getElementById('total-amount').innerText = `Total: ₹${total}`;
-    document.getElementById('delivery-charge').innerText = `Delivery Charge: ₹${delivery}`;
+    document.getElementById('total-amount').innerText = `Subtotal: ₹${total}`;
+    document.getElementById('delivery-charge').innerText = `Delivery: ₹${delivery}`;
+    document.getElementById('grand-total').innerText = `Grand Total: ₹${grandTotal}`;
+
 
     validateForm();
 }
