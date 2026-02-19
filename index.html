@@ -65,53 +65,32 @@
 
         /* HORIZONTAL GRID - 4 PRODUCTS PER ROW */
         .container { 
-    display: grid; 
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 12px; 
-    padding: 12px; 
-}
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr); /* Mobile pe 2 */
+            gap: 15px; 
+            padding: 15px; 
+        }
 
-@media (min-width: 768px) {
-    .container { 
-        grid-template-columns: repeat(4, 1fr); 
-    }
-}
-
+        @media (min-width: 768px) {
+            .container { grid-template-columns: repeat(4, 1fr); /* Tablet/Desktop pe 4 */ }
+        }
 
         .product-card { 
-    background: white; 
-    border-radius: 15px; 
-    padding: 12px; 
-    display: flex; 
-    flex-direction: column; 
-    justify-content: space-between;
-    height: 100%;
-    min-height: 260px;   /* Equal fixed height */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
-}
+            background: white; border-radius: 15px; padding: 15px; 
+            display: flex; flex-direction: column; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
+        }
 
         .prod-img-box { 
-    width: 100%; 
-    height: 120px; 
-    border-radius: 12px; 
-    overflow: hidden; 
-    background: #fef4ec; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-}
-
+            width: 100%; height: 130px; 
+            border-radius: 12px; overflow: hidden; background: #fef4ec; 
+            display: flex; align-items: center; justify-content: center; cursor: zoom-in; 
+        }
+        .prod-img-box img { width: 90%; height: 90%; object-fit: contain; }
+        .prod-img-box .emoji { font-size: 60px; }
 
         .prod-info { margin: 12px 0; flex-grow: 1; }
-      .prod-name { 
-    font-weight: 700; 
-    font-size: 16px; 
-    color: #333; 
-    line-height: 1.2; 
-    height: 38px;          /* Fixed height */
-    overflow: hidden;
-}
-
+        .prod-name { font-weight: 700; font-size: 18px; color: #333; line-height: 1.2; } /* Bada Font */
         .prod-price { font-weight: 800; color: var(--pp-orange); font-size: 20px; margin-top: 5px; } /* Bada Font */
 
         /* Action Buttons */
