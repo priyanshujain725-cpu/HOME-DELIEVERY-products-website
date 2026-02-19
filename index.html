@@ -75,11 +75,16 @@
             .container { grid-template-columns: repeat(4, 1fr); /* Tablet/Desktop pe 4 */ }
         }
 
-        .product-card { 
-            background: white; border-radius: 15px; padding: 15px; 
-            display: flex; flex-direction: column; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
-        }
+        .product-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.prod-name {
+    min-height: 44px; /* Keeps equal spacing */
+}
+
 
         .prod-img-box { 
             width: 100%; height: 130px; 
