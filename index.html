@@ -67,8 +67,8 @@
         .container { 
             display: grid; 
             grid-template-columns: repeat(2, 1fr); /* Mobile pe 2 */
-            gap: 20px; 
-            padding: 20px; 
+            gap: 10px; 
+            padding: 10px; 
         }
 
         @media (min-width: 768px) {
@@ -116,6 +116,52 @@
         /* Zoom Modal */
         .modal { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); justify-content: center; align-items: center; backdrop-filter: blur(5px); }
         .modal-content { max-width: 90%; max-height: 80%; border-radius: 20px; }
+        /* CATEGORY BAR */
+/* ICON CATEGORY BAR */
+.category-bar {
+    display: flex;
+    gap: 18px;
+    padding: 15px;
+    overflow-x: auto;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+}
+
+.cat-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    min-width: 70px;
+    transition: 0.2s;
+}
+
+.cat-emoji {
+    font-size: 28px;
+    background: #fff3e6;
+    padding: 12px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+}
+
+.cat-label {
+    margin-top: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #333;
+}
+
+.cat-icon.active .cat-emoji {
+    border: 2px solid var(--pp-orange);
+    background: #ffe0cc;
+    transform: scale(1.1);
+}
+
+.cat-icon.active .cat-label {
+    color: var(--pp-orange);
+}
+
+
     </style>
 </head>
 <body>
@@ -138,6 +184,36 @@
         <input type="text" id="search-bar" class="search-input" placeholder="Search products..." onkeyup="filterProducts()">
     </div>
 </div>
+<!-- CATEGORY FILTER -->
+<!-- CATEGORY ICON BAR -->
+<div class="category-bar">
+    <div class="cat-icon active" onclick="filterCategory(event,'all')">
+        <div class="cat-emoji">🛒</div>
+        <div class="cat-label">All</div>
+    </div>
+
+    <div class="cat-icon" onclick="filterCategory(event,'vegetable')">
+        <div class="cat-emoji">🥦</div>
+        <div class="cat-label">Veg</div>
+    </div>
+
+    <div class="cat-icon" onclick="filterCategory(event,'dairy')">
+        <div class="cat-emoji">🥛</div>
+        <div class="cat-label">Dairy</div>
+    </div>
+
+    <div class="cat-icon" onclick="filterCategory(event,'snacks')">
+        <div class="cat-emoji">🍪</div>
+        <div class="cat-label">Snacks</div>
+    </div>
+
+    <div class="cat-icon" onclick="filterCategory(event,'beverage')">
+        <div class="cat-emoji">🥤</div>
+        <div class="cat-label">Drinks</div>
+    </div>
+</div>
+
+    
 
 <div class="container" id="product-list">
     <div class="product-card" data-name="ONION (1kg)" data-price="35" data-stock="5">
@@ -162,7 +238,7 @@
 </div>
 
 
-    <div class="product-card" data-name="milk" data-price="76">
+    <div class="product-card" data-name="milk" data-price="76" data-category="dairy">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/67b38808b352b0c78c974c13/8901262150071_1-800x800.jpg" alt="Milk">
         </div>
@@ -2303,6 +2379,24 @@ function toggleDrawer() {
         drawerOpen = true;
     }
 }
+function filterCategory(event, category) {
+    document.querySelectorAll('.cat-icon').forEach(icon => {
+        icon.classList.remove('active');
+    });
+
+    event.currentTarget.classList.add('active');
+
+    document.querySelectorAll('.product-card').forEach(card => {
+        if (category === 'all') {
+            card.style.display = "flex";
+        } else {
+            const productCategory = card.getAttribute('data-category');
+            card.style.display = (productCategory === category) ? "flex" : "none";
+        }
+    });
+}
+
+
 
 
 </script>
