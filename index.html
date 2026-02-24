@@ -4,72 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PPCART | Fast Delivery</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
-  #splash {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(135deg, #ff9100, #ff9100, #ff9100);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    animation: fadeOut 1s ease 3s forwards;
-}
-
-.splash-content {
-    text-align: center;
-}
-
-/* LOGO */
-.splash-logo {
-    width: 120px;
-    margin-bottom: 20px;
-    animation: zoomIn 1.2s ease;
-}
-
-/* MAIN TITLE */
-#splash h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 70px;   /* 🔥 Increased size */
-    color: #ffffff;
-    letter-spacing: 6px;
-    text-shadow: 0 0 25px #eae0e0;
-    margin: 0;
-    animation: zoomIn 1.5s ease;
-}
-
-/* SUBTEXT */
-#splash span {
-    display: block;
-    font-size: 28px;   /* 🔥 Increased */
-    margin-top: 15px;
-    color: white;
-    letter-spacing: 4px;
-}
-
-/* Animations */
-@keyframes zoomIn {
-    0% {
-        transform: scale(0.5);
-        opacity: 0;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-@keyframes fadeOut {
-    to {
-        opacity: 0;
-        visibility: hidden;
-    }
-} 
-.splash-logo {
-    width: 190px;
-}
+  
 
 /* HIDE ORDER PANEL */
 .checkout-drawer.collapsed {
@@ -187,28 +123,65 @@
 .action-area { 
     margin-top: 10px; 
 }
+.add-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 30px;              /* More premium rounded look */
+    border: none;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
 
-.add-btn { 
-    width: 100%; 
-    background: white; 
-    color: var(--pp-orange); 
-    border: 2px solid var(--pp-orange); 
-    padding: 10px; 
-    border-radius: 10px; 
-    font-weight: 800; 
-    cursor: pointer; 
-    font-size: 16px; 
+    /* Gradient premium background */
+    background: linear-gradient(135deg, #ff7a00, #ff3d00);
+    color: white;
+
+    /* Soft shadow */
+    box-shadow: 0 4px 12px rgba(255, 87, 34, 0.4);
+
+    transition: all 0.3s ease;
+}
+.add-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(255, 87, 34, 0.6);
+}
+.qty-control {
+    display: none;
+    background: var(--pp-orange);
+    color: white;
+    border-radius: 20px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 6px 12px;
 }
 
-.qty-control { 
-    display: none; 
-    background: var(--pp-orange); 
-    color: white; 
-    border-radius: 10px; 
-    align-items: center; 
-    justify-content: space-between; 
+/* STYLE FOR + AND - BUTTONS */
+.qty-control button {
+    background: white;
+    color: var(--pp-orange);
+    border: none;
+    width: 40px;              /* Bigger size */
+    height: 40px;             /* Bigger size */
+    border-radius: 50%;       /* Round buttons */
+    font-size: 24px;          /* Bigger + and - */
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s ease;
 }
-        .qty-val { font-size: 18px; font-weight: 800; }
+
+/* Hover effect (brighter) */
+.qty-control button:hover {
+    background: #fff4e6;      /* Light bright shade */
+    transform: scale(1.1);    /* Slight zoom */
+}
+
+/* Quantity number bigger */
+.qty-val {
+    font-size: 20px;
+    font-weight: 800;
+    margin: 0 10px;
+}
+        
 
         /* Checkout Drawer */
         .checkout-drawer { position: fixed; bottom: 0; left: 0; right: 0; background: white; padding: 25px; border-radius: 30px 30px 0 0; box-shadow: 0 -10px 40px rgba(0,0,0,0.15); z-index: 2000; }
@@ -273,12 +246,6 @@
     </style>
 </head>
 <body>
- <div id="splash">
-    <div class="splash-content">
-        <img src="https://i.postimg.cc/sx393Wj2/0a77336d-cae6-448d-b12c-65291e44c379-removalai-preview.png" alt="PP Cart Logo" class="splash-logo">
-        <h1>PP CART</h1>
-        <span>COMING SOON...</span>
-    </div>
 </div>
 
 <header>
