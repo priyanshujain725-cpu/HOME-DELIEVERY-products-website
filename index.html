@@ -4,14 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PPCART | Fast Delivery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* SLIDE BAR */
-.slide-handle {
-    width: 50px;
-    height: 5px;
-    background: #ccc;
-    border-radius: 10px;
-    margin: 0 auto 12px;
+  #splash {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff0000, #ffd900, #de3a0d);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeOut 1s ease 3s forwards;
+}
+
+.splash-content {
+    text-align: center;
+}
+
+/* LOGO */
+.splash-logo {
+    width: 120px;
+    margin-bottom: 20px;
+    animation: zoomIn 1.2s ease;
+}
+
+/* MAIN TITLE */
+#splash h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 70px;   /* 🔥 Increased size */
+    color: #ffffff;
+    letter-spacing: 6px;
+    text-shadow: 0 0 25px #ff0000;
+    margin: 0;
+    animation: zoomIn 1.5s ease;
+}
+
+/* SUBTEXT */
+#splash span {
+    display: block;
+    font-size: 28px;   /* 🔥 Increased */
+    margin-top: 15px;
+    color: white;
+    letter-spacing: 4px;
+}
+
+/* Animations */
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        visibility: hidden;
+    }
+} 
+.splash-logo {
+    width: 180px;
 }
 
 /* HIDE ORDER PANEL */
@@ -64,68 +121,93 @@
         .speed-text { font-size: 18px; font-weight: 800; color: #ffffff; }
 
         /* HORIZONTAL GRID - 4 PRODUCTS PER ROW */
-        .container { 
+        /* HORIZONTAL GRID */
+.container { 
     display: grid; 
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    padding: 12px;
+    grid-template-columns: repeat(2, 1fr); /* Mobile pe 2 */
+    gap: 10px; 
+    padding: 10px; 
 }
 
-        @media (min-width: 768px) {
-            .container { grid-template-columns: repeat(4, 1fr); /* Tablet/Desktop pe 4 */ }
-        }
+@media (min-width: 768px) {
+    .container { 
+        grid-template-columns: repeat(4, 1fr); /* Desktop pe 4 */
+    }
+}
 
-      .product-card {
+.product-card {
     display: flex;
     flex-direction: column;
-    background: #fff;
-    border-radius: 16px;
-    padding: 12px;
-    height: 330px;   /* Equal card height */
-}
-    
-.prod-img-box {
-    width: 100%;
-    height: 130px;           /* Fixed equal image space */
-    border-radius: 12px;
-    background: #f3e8dc;     /* Light consistent bg */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 100%;
 }
 
-.prod-img-box img {
-    width: 90px;             /* Fixed image size */
-    height: 90px;
-    object-fit: contain;
+/* Product Image */
+.prod-img-box { 
+    width: 100%; 
+    height: 130px; 
+    border-radius: 12px; 
+    overflow: hidden; 
+    background: #fef4ec; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    cursor: zoom-in; 
 }
 
-.prod-img-box .emoji {
-    font-size: 70px;         /* Fixed emoji size */
+.prod-img-box img { 
+    width: 90%; 
+    height: 90%; 
+    object-fit: contain; 
 }
 
-     .prod-info {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
+.prod-img-box .emoji { 
+    font-size: 60px; 
 }
-    .prod-name {
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 1.3;
 
-    min-height: 36px;   /* Reserve space */
+/* Product Info */
+.prod-info { 
+    margin: 12px 0; 
+    flex-grow: 1; 
 }
-     .prod-price {
-    margin-top: auto;
+
+.prod-name { 
+    font-weight: 700; 
+    font-size: 18px; 
+    color: #333; 
+    line-height: 1.2; 
+}
+
+.prod-price { 
+    font-weight: 800; 
+    color: var(--pp-orange); 
+    font-size: 20px; 
+    margin-top: 5px; 
 }
         /* Action Buttons */
-      .action-area {
-    margin-top: auto;
+.action-area { 
+    margin-top: 10px; 
 }
-        .add-btn { width: 100%; background: white; color: var(--pp-orange); border: 2px solid var(--pp-orange); padding: 10px; border-radius: 10px; font-weight: 800; cursor: pointer; font-size: 16px; }
-        .qty-control { display: none; background: var(--pp-orange); color: white; border-radius: 10px; align-items: center; justify-content: space-between; }
-        .qty-control button { background: none; border: none; color: white; padding: 10px 18px; font-weight: bold; cursor: pointer; font-size: 18px; }
+
+.add-btn { 
+    width: 100%; 
+    background: white; 
+    color: var(--pp-orange); 
+    border: 2px solid var(--pp-orange); 
+    padding: 10px; 
+    border-radius: 10px; 
+    font-weight: 800; 
+    cursor: pointer; 
+    font-size: 16px; 
+}
+
+.qty-control { 
+    display: none; 
+    background: var(--pp-orange); 
+    color: white; 
+    border-radius: 10px; 
+    align-items: center; 
+    justify-content: space-between; 
+}
         .qty-val { font-size: 18px; font-weight: 800; }
 
         /* Checkout Drawer */
@@ -191,6 +273,13 @@
     </style>
 </head>
 <body>
+ <div id="splash">
+    <div class="splash-content">
+        <img src="c:\Users\priya\OneDrive\Pictures\16 january logo.png" alt="PP Cart Logo" class="splash-logo">
+        <h1>PP CART</h1>
+        <span>COMING SOON...</span>
+    </div>
+</div>
 
 <header>
     <div class="logo-container">
@@ -245,9 +334,9 @@
     </div>
 
 
-     <div class="cat-icon active" onclick="filterCategory(event,'Chips/Namkeen')">
+     <div class="cat-icon active" onclick="filterCategory(event,'Namkeen/Chips')">
         <div class="cat-emoji">🍟</div>
-        <div class="cat-label">Chips/Namkeen</div>
+        <div class="cat-label">Namkeen/Chips</div>
         
     </div>
     <div class="cat-icon" onclick="filterCategory(event,'dairy')">
@@ -269,29 +358,7 @@
     
 
 <div class="container" id="product-list">
-    <div class="product-card" data-name="ONION (1kg)" data-price="35" data-stock="5">
-    <div class="prod-img-box" onclick="zoomImage(this)">
-        <span class="emoji">🧅</span>
-    </div>
-
-    <div class="prod-info">
-        <div class="prod-name">ONION (1 kg)</div>
-        <div class="prod-price">₹35</div>
-        <div class="stock-text">Available: <span class="stock-val">100</span></div>
-    </div>
-
-    <div class="action-area">
-        <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
-        <div class="qty-control">
-            <button onclick="updateQty(this, -1)">-</button>
-            <span class="qty-val">0</span>
-            <button onclick="updateQty(this, 1)">+</button>
-        </div>
-    </div>
-</div>
-
-
-    <div class="product-card" data-name="milk" data-price="76" data-category="dairy">
+       <div class="product-card" data-name="milk" data-price="76" data-category="dairy">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.mystore.in/s/62ea2c599d1398fa16dbae0a/67b38808b352b0c78c974c13/8901262150071_1-800x800.jpg" alt="Milk">
         </div>
@@ -310,7 +377,7 @@
         </div>
     </div>
 
-    <div class="product-card" data-name="parle g gluco 800g" data-price="60">
+    <div class="product-card" data-name="parle g gluco 800g" data-price="60" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.spices.com.mt/wp-content/uploads/2022/05/PARLE-G-79.9-GR.jpg" alt="Parle G">
         </div>
@@ -382,7 +449,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Marie gold family pack" data-price="137">
+    <div class="product-card" data-name="Marie gold family pack" data-price="137" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://m.media-amazon.com/images/I/41kilfREbxL.jpg" alt="Biscuit">
         </div>
@@ -490,7 +557,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Anmol Dream lite Biscuit 200 g" data-price="27">
+    <div class="product-card" data-name="Anmol Dream lite Biscuit 200 g" data-price="27" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx9WGFHeavevYPYFB_PH9ZwDXcEVJfa0wV0w&s" alt="Biscuit">
         </div>
@@ -508,7 +575,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Britania Bourbon 50/60 g" data-price="9">
+    <div class="product-card" data-name="Britania Bourbon 50/60 g" data-price="9" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.quickpantry.in/cdn/shop/products/britannia-bourbon-chocolate-cream-biscuits-quick-pantry-1.jpg?v=1710538229" alt="Biscuit">
         </div>
@@ -526,7 +593,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Britania gooday family pack" data-price="130">
+    <div class="product-card" data-name="Britania gooday family pack" data-price="130" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://ankosofttech.com/img/britannia-good-day-cashew-cookies-family-KyfV1A4I-1600x1600.jpg" alt="Biscuit">
         </div>
@@ -544,7 +611,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Britania jim jam 92/100 g" data-price="22">
+    <div class="product-card" data-name="Britania jim jam 92/100 g" data-price="22" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.bbassets.com/media/uploads/p/l/100012363_15-britannia-treat-jim-jam-cream-biscuits.jpg" alt="jim jam">
         </div>
@@ -562,7 +629,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Britania Little Heart 30 g" data-price="9">
+    <div class="product-card" data-name="Britania Little Heart 30 g" data-price="9" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://frugivore-bucket.s3.amazonaws.com/media/package/img_one/2020-01-09/Little_Hearts_Biscuits_34.5gm.jpg" alt="Little heart biscuit">
         </div>
@@ -580,7 +647,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Britania Marie Gold 64/73.8 g" data-price="9">
+    <div class="product-card" data-name="Britania Marie Gold 64/73.8 g" data-price="9" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRy1Yh7jhiTnQuQYtsixoQrdT429HzZcFapqA&s" alt="Marrie Gold">
         </div>
@@ -598,7 +665,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Britania Milk Bikis 190 g" data-price="27">
+    <div class="product-card" data-name="Britania Milk Bikis 190 g" data-price="27" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSdFhJytZQTooeOWqCFWKt5dWKEGcrpDUlJQ&s" alt="milk biscuit">
         </div>
@@ -616,7 +683,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Britania 50-50 sweet and salty 200 g" data-price="31">
+    <div class="product-card" data-name="Britania 50-50 sweet and salty 200 g" data-price="31" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDyMcwTJhOcjkv00eT6vnSeMhYPmn_VVZ7OA&s" alt="50-50 Biscuit">
         </div>
@@ -634,7 +701,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Britania Nutri Choice 100 g" data-price="22">
+    <div class="product-card" data-name="Britania Nutri Choice 100 g" data-price="22" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://neelamfoodlandmumbai.com/cdn/shop/files/IMG_7334.jpg?v=1755382183" alt="Nutri choice Biscuit">
         </div>
@@ -652,7 +719,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Britania Tiger krunch 60 g" data-price="9">
+    <div class="product-card" data-name="Britania Tiger krunch 60 g" data-price="9" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.kiranapoorti.com/image/cache/catalog/BRITANNIA%20TIGER%20KRUNCH-600x315w.jpeg" alt="Tiger Crunch Biscuit">
         </div>
@@ -670,7 +737,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Britania Toast Premium 200 g" data-price="36">
+    <div class="product-card" data-name="Britania Toast Premium 200 g" data-price="36" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.britannia.co.in/_next/image?url=https%3A%2F%2Fmedia.britannia.co.in%2Fpremium_rusk_843ced58c9.jpg&w=1920&q=100" alt="Britania Toast">
         </div>
@@ -688,7 +755,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Britania Toast Premium 400 g" data-price="77">
+    <div class="product-card" data-name="Britania Toast Premium 400 g" data-price="77" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://m.media-amazon.com/images/I/712B-s5PrFL._AC_UF894,1000_QL80_.jpg" alt="Britania Toast">
         </div>
@@ -706,7 +773,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Britania Toast Premium 250 g" data-price="45">
+    <div class="product-card" data-name="Britania Toast Premium 250 g" data-price="45"data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://m.media-amazon.com/images/S/aplus-media/sota/68ebeb64-1266-4bd9-bc6a-7de1dd59f9e6.__CR0,0,1500,1500_PT0_SX300_V1___.jpg" alt="Britania Toast">
         </div>
@@ -724,7 +791,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Britania Gooday cashew cookies 200 g" data-price="40">
+    <div class="product-card" data-name="Britania Gooday cashew cookies 200 g" data-price="40"data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://tiimg.tistatic.com/fp/1/007/707/cashew-butter-cookies-britannia-good-day-120-gm--938.jpg" alt="Biscuit">
         </div>
@@ -742,7 +809,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Britania Gooday chocochip cookies 400 g" data-price="75">
+    <div class="product-card" data-name="Britania Gooday chocochip cookies 400 g" data-price="75"data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=1080/da/cms-assets/cms/product/08e3289a-115d-4fe5-a932-113b80d19ac8.png" alt="Britania biscuit">
         </div>
@@ -760,7 +827,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Britania Jim jam 138/150 g" data-price="36">
+    <div class="product-card" data-name="Britania Jim jam 138/150 g" data-price="36"data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://kumaribasket.com/wp-content/uploads/2020/09/Treat-Jimjam-Naughty-Jam-Sandwich-Biscuits.jpg" alt="Britania Biscuit">
         </div>
@@ -778,7 +845,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Britania Marie gold 250 g" data-price="36">
+    <div class="product-card" data-name="Britania Marie gold 250 g" data-price="36"data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.bbassets.com/media/uploads/p/l/220244_9-britannia-marie-gold-biscuits.jpg" alt="Britania biscuit">
         </div>
@@ -796,7 +863,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Britania Pure Magic Chocolush 253/300 g" data-price="99">
+    <div class="product-card" data-name="Britania Pure Magic Chocolush 253/300 g" data-price="99"data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.bbassets.com/media/uploads/p/l/40197804_13-britannia-pure-magic-chocolush-cookies.jpg" alt="Britania biscuit">
         </div>
@@ -814,7 +881,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Britania Treat cream waffers orange 55g" data-price="22.5">
+    <div class="product-card" data-name="Britania Treat cream waffers orange 55g" data-price="22.5"data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.bbassets.com/media/uploads/p/l/40224027_10-britannia-treat-treat-creme-wafers-orange.jpg" alt="Britania biscuit">
         </div>
@@ -832,7 +899,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Britania Treat cream waffers orange 55g" data-price="22.5">
+    <div class="product-card" data-name="Britania Treat cream waffers orange 55g" data-price="22.5"data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://media.britannia.co.in/large_1041_x_484_Choco_01e91a6a6f.png" alt="Britania Biscuit">
         </div>
@@ -850,7 +917,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Cadbury Oreo choco cream biscuit 108.55g" data-price="36">
+    <div class="product-card" data-name="Cadbury Oreo choco cream biscuit 108.55g" data-price="36"data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://m.media-amazon.com/images/I/613tw51EFKL._AC_UF894,1000_QL80_.jpg" alt="Cadbury biscuit">
         </div>
@@ -868,7 +935,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Cadbury Oreo choco cream biscuit 41.75" data-price="9.10">
+    <div class="product-card" data-name="Cadbury Oreo choco cream biscuit 41.75" data-price="9.10"data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.bbassets.com/media/uploads/p/l/100609485_42-cadbury-oreo-creame-biscuit-chocolate.jpg" alt="Britania Toast">
         </div>
@@ -886,7 +953,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Dukes waffy choco roll 250 g" data-price="83">
+    <div class="product-card" data-name="Dukes waffy choco roll 250 g" data-price="83"data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://jagsfresh-bucket.s3.amazonaws.com/media/package/img_one/2019-09-19/Dukes_Waffy_Choco_Roll_250_g.jpg" alt="waffy roll">
         </div>
@@ -904,7 +971,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Dukes waffy strawberry roll 250 g" data-price="83">
+    <div class="product-card" data-name="Dukes waffy strawberry roll 250 g" data-price="83"data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://jammubasket.com/images/products/918_dukes-waffy-roll-strawberry-250-g-c51be9a52f996f7ff42242c3608485db.jpeg" alt="waffy roll">
         </div>
@@ -922,7 +989,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Karachi fruit biscuit 200g" data-price="85">
+    <div class="product-card" data-name="Karachi fruit biscuit 200g" data-price="85"data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://m.media-amazon.com/images/I/51kDADW45cL._AC_UF894,1000_QL80_.jpg" alt="fruit biscuit">
         </div>
@@ -940,7 +1007,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Karachi kaju nankhatai" data-price="146">
+    <div class="product-card" data-name="Karachi kaju nankhatai" data-price="146" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQptPoAmKQu-_cVDZmn_k94BH2gVT_2Hr2og&s" alt="Nankhatai">
         </div>
@@ -958,7 +1025,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Lottie choco pie 12pack*28g (336g)" data-price="110">
+    <div class="product-card" data-name="Lottie choco pie 12pack*28g (336g)" data-price="110" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://gropharm.in/wp-content/uploads/2021/07/71Touhzh83L._SX679_.jpg" alt="choco pie">
         </div>
@@ -976,7 +1043,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Lottie choco pie 18 pack (504g)" data-price="153">
+    <div class="product-card" data-name="Lottie choco pie 18 pack (504g)" data-price="153" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://freshlee.in/cdn/shop/files/1028485_c0162cf6-6c16-4183-a5b0-2331dd4ede72_1080x.jpg?v=1756738316" alt="choco pie">
         </div>
@@ -994,7 +1061,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Parle g gluco 250g" data-price="24">
+    <div class="product-card" data-name="Parle g gluco 250g" data-price="24" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://ik.imagekit.io/wlfr/wellness/images/products/340631-1.jpg" alt="biscuit">
         </div>
@@ -1012,7 +1079,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Parle happy happy chocochip cookies 63g" data-price="8">
+    <div class="product-card" data-name="Parle happy happy chocochip cookies 63g" data-price="8" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS3B29ZXSNeywe-YFulz4s6dmExuI1PXT2qw&s" alt="biscuit">
         </div>
@@ -1030,7 +1097,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Parle hide and seek 100g" data-price="19">
+    <div class="product-card" data-name="Parle hide and seek 100g" data-price="19" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLNIiRd3SC8QyQLh9GP7sdfEIu4q3KI3GMtg&s" alt="biscuit">
         </div>
@@ -1048,7 +1115,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Parle hide and seek 200g" data-price="45">
+    <div class="product-card" data-name="Parle hide and seek 200g" data-price="45" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.bbassets.com/media/uploads/p/l/40009931_10-parle-hide-seek-chocolate.jpg" alt="Biscuit">
         </div>
@@ -1066,7 +1133,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Parle hide and seek cream sandwiches 400g" data-price="67">
+    <div class="product-card" data-name="Parle hide and seek cream sandwiches 400g" data-price="67" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.bbassets.com/media/uploads/p/l/40289826_2-parle-hide-seek-creme-combi-creme-sandwiches-assorted-flavours.jpg" alt="Cream biscuit">
         </div>
@@ -1084,7 +1151,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Akash aloo Bhujia 900g" data-price="170">
+    <div class="product-card" data-name="Akash aloo Bhujia 900g" data-price="170" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.bbassets.com/media/uploads/p/xl/40278657_1-aakash-namkeen-alu-bhujia-authentic-flavour-taste.jpg" alt="Namkeen">
         </div>
@@ -1102,7 +1169,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Akash lahsun sev 350g" data-price="75">
+    <div class="product-card" data-name="Akash lahsun sev 350g" data-price="75" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://aakashnamkeen.com/cdn/shop/products/Lahsun-Sev_800x.jpg?v=1674108521" >
         </div>
@@ -1120,7 +1187,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Akash Soya sticks 180g" data-price="30">
+    <div class="product-card" data-name="Akash Soya sticks 180g" data-price="30" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqWiQ2xvLe2CBgYpFiarvFd-UBVKMZLadwxw&s" >
         </div>
@@ -1138,7 +1205,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Balaji Chana jor garam 230g" data-price="25">
+    <div class="product-card" data-name="Balaji Chana jor garam 230g" data-price="25" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://jfkgrocery.com/cdn/shop/files/balaji-chanajorgaram.webp?v=1712425600" >
         </div>
@@ -1156,7 +1223,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Balaji Gathia 300g" data-price="49">
+    <div class="product-card" data-name="Balaji Gathia 300g" data-price="49" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.balajiwafers.com/cdn/shop/files/Gathiya_Carousal_01_b77c88f7-e724-46b8-ab76-2ce50128e8a9.jpg?v=1746594633" >
         </div>
@@ -1174,7 +1241,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Balaji Crunchem Salty wafer chips 140g" data-price="36">
+    <div class="product-card" data-name="Balaji Crunchem Salty wafer chips 140g" data-price="36" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.balajiwafers.com/cdn/shop/files/Crunchem_Simply_Salted_Wafers_Carousal_01_3ceb57f9-b287-46d2-a4f2-824e75d1ee58.jpg?v=1746174045" >
         </div>
@@ -1192,7 +1259,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Balaji Teekha Mitha Mix 500g" data-price="82">
+    <div class="product-card" data-name="Balaji Teekha Mitha Mix 500g" data-price="82" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.bbassets.com/media/uploads/p/l/40053576_3-balaji-namkeen-tikha-mitha-mix.jpg">
         </div>
@@ -1210,7 +1277,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Balaji Crunchem Cream and onion wafer chips 140g" data-price="36">
+    <div class="product-card" data-name="Balaji Crunchem Cream and onion wafer chips 140g" data-price="36" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.balajiwafers.com/cdn/shop/files/Crunchem__Cream_Onion_Wafers_Carousal_01_9fcea2c0-9667-4ce4-b6cf-9ca5a700ddca.jpg?v=1746173813" >
         </div>
@@ -1228,7 +1295,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Balaji Crunchem Masala masti wafer chips 140g" data-price="36">
+    <div class="product-card" data-name="Balaji Crunchem Masala masti wafer chips 140g" data-price="36" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://cdn.zeptonow.com/production/tr:w-312,ar-2400-2400,pr-true,f-auto,,q-40/cms/product_variant/1967f8d5-e603-4253-b3ae-48e5c427d117.jpeg" >
         </div>
@@ -1246,7 +1313,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Balaji Crunchem Tomato twist wafer chips 140g" data-price="36">
+    <div class="product-card" data-name="Balaji Crunchem Tomato twist wafer chips 140g" data-price="36" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.balajiwafers.com/cdn/shop/files/Crunchem_Tomato_Twist_Wafers_Default_f0a9a1d5-cbe0-4475-9aac-0423acae381c.png?v=1749561520&width=1500" >
         </div>
@@ -1264,7 +1331,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Balaji wheelos masala 48g" data-price="9">
+    <div class="product-card" data-name="Balaji wheelos masala 48g" data-price="9" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.balajiwafers.com/cdn/shop/files/Wheelos_Masala_Carousal_01_6fa2175e-e898-4238-af8c-04904513a9f0.jpg?v=1746508635">
         </div>
@@ -1282,7 +1349,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Kataria Barik Sev 200g" data-price="48">
+    <div class="product-card" data-name="Kataria Barik Sev 200g" data-price="48" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://5.imimg.com/data5/SELLER/Default/2023/1/OQ/MX/YG/182288557/nylon-sev-1000x1000.jpg">
         </div>
@@ -1300,7 +1367,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Kataria Bhavnagri gathia 200g" data-price="48">
+    <div class="product-card" data-name="Kataria Bhavnagri gathia 200g" data-price="48" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://tiimg.tistatic.com/fp/1/009/384/kataria-bhavnagari-gathiya-namkeen-196.jpg">
         </div>
@@ -1318,7 +1385,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Kataria Mix 400g" data-price="95">
+    <div class="product-card" data-name="Kataria Mix 400g" data-price="95" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://tiimg.tistatic.com/fp/1/009/380/bikaneri-mix-namkeen-995.jpg">
         </div>
@@ -1336,7 +1403,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Kataria Boondi 400g" data-price="95">
+    <div class="product-card" data-name="Kataria Boondi 400g" data-price="95" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://5.imimg.com/data5/SELLER/Default/2023/1/DS/AP/QB/182288557/raita-boondi.jpg">
         </div>
@@ -1354,7 +1421,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Britania Little_Hearts_Biscuits_34 70G" data-price="27">
+    <div class="product-card" data-name="Britania Little_Hearts_Biscuits_34 70G" data-price="27" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpjZMSvlJD0QHwOQt0xeXKqrVya519TtXtlg&s">
         </div>
@@ -1372,7 +1439,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Bikaji Falahari mix 200g" data-price="48">
+    <div class="product-card" data-name="Bikaji Falahari mix 200g" data-price="48" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.jiomart.com/images/product/original/491554200/bikaji-falahari-mix-200-g-product-images-o491554200-p590033093-0-202212230051.jpg?im=Resize=(1000,1000)">
         </div>
@@ -1390,7 +1457,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Bhujia sev 1 kg" data-price="250">
+    <div class="product-card" data-name="Haldiram Bhujia sev 1 kg" data-price="250" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.haldirams.com/media/catalog/product/cache/71134970afb779eb7860339989626b7e/b/l/blu081842.jpg">
         </div>
@@ -1408,7 +1475,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram All In One 200g" data-price="51">
+    <div class="product-card" data-name="Haldiram All In One 200g" data-price="51" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.haldirams.com/media/catalog/product/cache/71134970afb779eb7860339989626b7e/a/l/all_in_one_200g_1.jpg">
         </div>
@@ -1426,7 +1493,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram All In One 400g" data-price="99">
+    <div class="product-card" data-name="Haldiram All In One 400g" data-price="99" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://ankosofttech.com/img/haldirams-all-in-one-namkeen-400g-spicy--vhG0Vlq4-1600x1600.webp">
         </div>
@@ -1444,7 +1511,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Aloo Bhujia 200g" data-price="47">
+    <div class="product-card" data-name="Haldiram Aloo Bhujia 200g" data-price="47" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://m.media-amazon.com/images/I/51NMSG3S2KL._SY300_SX300_QL70_FMwebp_.jpg">
         </div>
@@ -1462,7 +1529,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Aloo Bhujia 400g" data-price="86">
+    <div class="product-card" data-name="Haldiram Aloo Bhujia 400g" data-price="86" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.haldirams.com/media/catalog/product/cache/71134970afb779eb7860339989626b7e/b/l/blu08127_1.jpg">
         </div>
@@ -1480,7 +1547,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Bhujia sev 200g" data-price="51">
+    <div class="product-card" data-name="Haldiram Bhujia sev 200g" data-price="51" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5860-1744697464832&w=640&q=75s">
         </div>
@@ -1498,7 +1565,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Bhujia sev 400g" data-price="103">
+    <div class="product-card" data-name="Haldiram Bhujia sev 400g" data-price="103" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5861-1744697525843&w=640&q=75">
         </div>
@@ -1516,7 +1583,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Khatta Meetha 1kg" data-price="195">
+    <div class="product-card" data-name="Haldiram Khatta Meetha 1kg" data-price="195" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5874-1768981931255&w=640&q=75">
         </div>
@@ -1534,7 +1601,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Khatta Meetha 400g" data-price="81">
+    <div class="product-card" data-name="Haldiram Khatta Meetha 400g" data-price="81" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5875-1768890172947&w=640&q=75">
         </div>
@@ -1552,7 +1619,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Khatta Meetha 220g" data-price="45">
+    <div class="product-card" data-name="Haldiram Khatta Meetha 220g" data-price="45" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5875-1768890172947&w=640&q=75">
         </div>
@@ -1570,7 +1637,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Lemon Bhel 200g" data-price="34">
+    <div class="product-card" data-name="Haldiram Lemon Bhel 200g" data-price="34" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5877-1768890557164&w=640&q=75">
         </div>
@@ -1588,7 +1655,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Lite Chiwda 200g" data-price="38">
+    <div class="product-card" data-name="Haldiram Lite Chiwda 200g" data-price="38" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5878-1768890820276&w=640&q=75">
         </div>
@@ -1606,7 +1673,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Mini Bhakarwadi 200g" data-price="56">
+    <div class="product-card" data-name="Haldiram Mini Bhakarwadi 200g" data-price="56" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5882-1744700929349&w=640&q=75">
         </div>
@@ -1624,7 +1691,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Mixture snacks 200g" data-price="39">
+    <div class="product-card" data-name="Haldiram Mixture snacks 200g" data-price="39" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5884-1751449469468&w=640&q=75">
         </div>
@@ -1642,7 +1709,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Mixture snacks 400g" data-price="74">
+    <div class="product-card" data-name="Haldiram Mixture snacks 400g" data-price="74" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5885-1768982393549&w=640&q=75">
         </div>
@@ -1660,7 +1727,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Moongdal 1KG" data-price="241">
+    <div class="product-card" data-name="Haldiram Moongdal 1KG" data-price="241" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5886-1750839164995&w=640&q=75">
         </div>
@@ -1678,7 +1745,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Murukku snacks 200g" data-price="56">
+    <div class="product-card" data-name="Haldiram Murukku snacks 200g" data-price="56" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5887-1750839679479&w=640&q=75">
         </div>
@@ -1696,7 +1763,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Panchratan Mixture 200g" data-price="77">
+    <div class="product-card" data-name="Haldiram Panchratan Mixture 200g" data-price="77" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5888-1744701253554&w=640&q=75">
         </div>
@@ -1714,7 +1781,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Phalahari Chiwda 200g" data-price="42">
+    <div class="product-card" data-name="Haldiram Phalahari Chiwda 200g" data-price="42" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5890-1744701575476&w=640&q=75">
         </div>
@@ -1732,7 +1799,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Salted Peanuts 200g" data-price="47">
+    <div class="product-card" data-name="Haldiram Salted Peanuts 200g" data-price="47" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5901-1768891506827&w=640&q=75">
         </div>
@@ -1750,7 +1817,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Soya sticks 200g" data-price="38">
+    <div class="product-card" data-name="Haldiram Soya sticks 200g" data-price="38" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5907-1750746792408&w=640&q=75">
         </div>
@@ -1768,7 +1835,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Tasty Nuts 200g" data-price="47">
+    <div class="product-card" data-name="Haldiram Tasty Nuts 200g" data-price="47" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5910-1744702814665&w=640&q=75">
         </div>
@@ -1786,7 +1853,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Gol Kachori 200g" data-price="59">
+    <div class="product-card" data-name="Haldiram Gol Kachori 200g" data-price="59" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5917-1768892008588&w=640&q=75">
         </div>
@@ -1804,7 +1871,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Moong Dal 200g" data-price="50">
+    <div class="product-card" data-name="Haldiram Moong Dal 200g" data-price="50" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5922-1744703272802&w=640&q=75">
         </div>
@@ -1822,7 +1889,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Jain Bikaneri Bhujia 1KG" data-price="235">
+    <div class="product-card" data-name="Jain Bikaneri Bhujia 1KG" data-price="235" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-6308-1744804780609&w=640&q=75">
         </div>
@@ -1840,7 +1907,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Kurkure Chilli Chatka 72g" data-price="18">
+    <div class="product-card" data-name="Kurkure Chilli Chatka 72g" data-price="18" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-6664-1744368534262&w=640&q=75">
         </div>
@@ -1858,7 +1925,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Kurkure Masala Munch 38g" data-price="9">
+    <div class="product-card" data-name="Kurkure Masala Munch 38g" data-price="9" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-6667-1744368718366&w=640&q=75">
         </div>
@@ -1876,7 +1943,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Kurkure Masala Munch 72g" data-price="18">
+    <div class="product-card" data-name="Kurkure Masala Munch 72g" data-price="18" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-6668-1744368803287&w=640&q=75">
         </div>
@@ -1894,7 +1961,7 @@
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Kurkure Puffcorn Yummy Chese 52g" data-price="18">
+     <div class="product-card" data-name="Kurkure Puffcorn Yummy Chese 52g" data-price="18" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-6670-1744368893638&w=640&q=75">
         </div>
@@ -1912,7 +1979,7 @@
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Lahsoon Bhakarwadi 200g" data-price="48">
+     <div class="product-card" data-name="Lahsoon Bhakarwadi 200g" data-price="48" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-6733-1770808684577&w=640&q=75">
         </div>
@@ -1930,7 +1997,7 @@
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Lays Cream and onion 48g" data-price="18">
+     <div class="product-card" data-name="Lays Cream and onion 48g" data-price="18" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-6794-1744376910588&w=640&q=75">
         </div>
@@ -1948,7 +2015,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Lays Cream and onion 67g" data-price="27">
+    <div class="product-card" data-name="Lays Cream and onion 67g" data-price="27" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-6795-1744376996148&w=640&q=75">
         </div>
@@ -1966,7 +2033,7 @@
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Lays Chile Limon 48g" data-price="18">
+    <div class="product-card" data-name="Lays Chile Limon 48g" data-price="18" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-6796-1768893731872&w=640&q=75">
         </div>
@@ -2453,6 +2520,12 @@ function filterCategory(event, category) {
 
 
 </script>
-
+<script>
+    window.addEventListener("load", function() {
+        setTimeout(function() {
+            document.getElementById("splash").style.display = "none";
+        }, 3000);
+    });
+</script>
 </body>
 </html>
