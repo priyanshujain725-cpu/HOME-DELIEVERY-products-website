@@ -8,15 +8,22 @@
   
 
 /* HIDE ORDER PANEL */
+/* Body se purana padding-bottom hata dein ya kam karein */
+body { 
+    padding-bottom: 100px; 
+}
+
+/* Drawer hidden state: sirf thoda sa handle dikhega */
 .checkout-drawer.collapsed {
-    transform: translateY(85%); /* completely hidden when collapsed */
-
+    transform: translateY(calc(80%)); 
 }
 
-/* SMOOTH ANIMATION */
+/* Jab collapsed nahi hoga tab poora dikhega */
 .checkout-drawer {
-    transition: transform 0.3s ease;
+    transform: translateY(0);
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
+
 
         :root { 
             --pp-orange: #ff7a00; 
@@ -181,9 +188,11 @@
     font-weight: 800;
     margin: 0 10px;
 }
+
         
 
         /* Checkout Drawer */
+        
         .checkout-drawer { position: fixed; bottom: 0; left: 0; right: 0; background: white; padding: 25px; border-radius: 30px 30px 0 0; box-shadow: 0 -10px 40px rgba(0,0,0,0.15); z-index: 2000; }
         .cart-summary { background: var(--pp-green); color: white; padding: 15px; border-radius: 15px; display: none; justify-content: space-between; margin-bottom: 15px; font-weight: 700; font-size: 18px; }
         
@@ -246,7 +255,8 @@
     </style>
 </head>
 <body>
-</div>
+
+
 
 <header>
     <div class="logo-container">
@@ -2201,7 +2211,9 @@
 </div>
 
 <div class="checkout-drawer collapsed" id="checkoutDrawer">
-    <div class="slide-handle" onclick="toggleDrawer()"></div>
+    <div class="slide-handle" onclick="toggleDrawer()" style="width: 100%; height: 30px; display: flex; justify-content: center; align-items: center; cursor: pointer;">
+    <div style="width: 40px; height: 5px; background: #ddd; border-radius: 10px;"></div>
+</div>
 
     <div class="cart-summary" id="cart-summary">
     <span id="items-count">0 Items</span>
@@ -2346,30 +2358,33 @@
         addBtn.style.color = "#999";
         addBtn.style.cursor = "not-allowed";
     }
-
-        calculateCart();
+     calculateCart();
     }
 
     function calculateCart() {
     let total = 0, count = 0;
 
     document.querySelectorAll('.product-card').forEach(card => {
-        const qty = parseInt(card.querySelector('.qty-val').innerText);
-        if (qty > 0) {
-            total += (parseInt(card.getAttribute('data-price')) * qty);
-            count += qty;
+        const qtyVal = card.querySelector('.qty-val');
+        if (qtyVal) {
+            const qty = parseInt(qtyVal.innerText);
+            if (qty > 0) {
+                total += (parseInt(card.getAttribute('data-price')) * qty);
+                count += qty;
+            }
         }
     });
 
     const delivery = getDeliveryCharge(total);
     const grandTotal = total + delivery;
 
+    // DRAWER AUTO-OPEN LOGIC
+    
     document.getElementById('cart-summary').style.display = count > 0 ? 'flex' : 'none';
     document.getElementById('items-count').innerText = `${count} Items`;
     document.getElementById('total-amount').innerText = `Subtotal: ₹${total}`;
     document.getElementById('delivery-charge').innerText = `Delivery: ₹${delivery}`;
     document.getElementById('grand-total').innerText = `Grand Total: ₹${grandTotal}`;
-
 
     validateForm();
 }
@@ -2486,13 +2501,6 @@ function filterCategory(event, category) {
 
 
 
-</script>
-<script>
-    window.addEventListener("load", function() {
-        setTimeout(function() {
-            document.getElementById("splash").style.display = "none";
-        }, 3000);
-    });
 </script>
 </body>
 </html>
