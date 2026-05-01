@@ -5,7 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PPCART | Fast Delivery</title>
     <style>
-  
+        .price-box{
+    display:flex;
+    gap:8px;
+    align-items:center;
+    margin-top:4px;
+}
+
+.mrp-price{
+    color:#888;
+    text-decoration:line-through;
+    font-size:16px;
+}
+
+.sell-price{
+    color:#0a8f3d;
+    font-weight:800;
+    font-size:20px;
+}
+
+.discount-tag{
+    color: #dc5512;
+    font-weight: 700;
+    font-size: 15px;
+}
 
 /* HIDE ORDER PANEL */
 /* Body se purana padding-bottom hata dein ya kam karein */
@@ -207,6 +230,7 @@ body {
         .modal { display: none; position: fixed; z-index: 9999; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.9); justify-content: center; align-items: center; backdrop-filter: blur(5px); }
         .modal-content { max-width: 90%; max-height: 80%; border-radius: 20px; }
         /* CATEGORY BAR */
+        
 /* ICON CATEGORY BAR */
 .category-bar {
     display: flex;
@@ -263,7 +287,7 @@ body {
         <img src="https://i.postimg.cc/pTHKBjnC/16-january-logo.png" class="logo-img" alt="Logo">
         <div class="brand-name">PPCART</div>
     </div>
-    <div style="font-size: 16px; font-weight: 700;">9826915121</div>
+    <div style="font-size: 16px; font-weight: 700;">Customer Help Desk </div>
 </header>
 
 <div class="delivery-promise">
@@ -341,7 +365,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Full Cream Milk</div>
-            <div class="prod-price">₹76</div>
+            <div class="price-box">
+              <span class="mrp-price">₹80</span>
+              <span class="sell-price">₹76</span>
+              <span class="discount-tag"> color:</span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -354,13 +382,17 @@ body {
         </div>
     </div>
 
-    <div class="product-card" data-name="parle g gluco 800g" data-price="60" data-category="Cookies/Biscuits">
+    <div class="product-card" data-name="parle g gluco 800g" data-price="81" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.spices.com.mt/wp-content/uploads/2022/05/PARLE-G-79.9-GR.jpg" alt="Parle G">
         </div>
         <div class="prod-info">
             <div class="prod-name">Parle G gluco 800g</div>
-            <div class="prod-price">₹60</div>
+            <div class="price-box">
+              <span class="mrp-price">₹100</span>
+              <span class="sell-price">₹81</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -378,7 +410,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Aloo(1 kg)</div>
-            <div class="prod-price">₹30</div>
+            <div class="price-box">
+              <span class="mrp-price">₹36</span>
+              <span class="sell-price">₹30</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -396,7 +432,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Too Yum Bhoot Chips 82g</div>
-            <div class="prod-price">₹30</div>
+            <div class="price-box">
+              <span class="mrp-price">₹50</span>
+              <span class="sell-price">₹30</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -408,13 +448,17 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Fruit beer " data-price="60">
+    <div class="product-card" data-name="Fruit beer " data-price="75">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://tse4.mm.bing.net/th/id/OIP.wzvOqdwlC82MillCmnqTjAAAAA?pid=Api&P=0&h=180" alt="fruit beer">
         </div>
         <div class="prod-info">
             <div class="prod-name">Fruit Beer</div>
-            <div class="prod-price">₹60</div>
+            <div class="price-box">
+              <span class="mrp-price">₹110</span>
+              <span class="sell-price">₹75</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -432,7 +476,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Marie gold family pack</div>
-            <div class="prod-price">₹137</div>
+            <div class="price-box">
+              <span class="mrp-price">₹145</span>
+              <span class="sell-price">₹137</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -450,7 +498,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Haldiram Aloo Bhujia 1kg</div>
-            <div class="prod-price">₹192</div>
+            <div class="price-box">
+              <span class="mrp-price">₹220</span>
+              <span class="sell-price">₹195</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -462,13 +514,17 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Maggie Veg Atta 425g" data-price="147">
+    <div class="product-card" data-name="Maggie Veg Atta 425g" data-price="155">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://tse1.mm.bing.net/th/id/OIP.gg5utSM93Nd8aDL3ds9xCwHaCt?pid=Api&P=0&h=180" alt="Maggie">
         </div>
         <div class="prod-info">
             <div class="prod-name">Maggie Veg Atta 425g</div>
-            <div class="prod-price">₹147</div>
+            <div class="price-box">
+              <span class="mrp-price">₹169</span>
+              <span class="sell-price">₹155</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -480,13 +536,17 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Kissan tomato ketchup" data-price="114">
+    <div class="product-card" data-name="Kissan tomato ketchup" data-price="120">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.keomart.com/wp-content/uploads/2024/03/15533619-1711691252620.jpg" alt="Tomato ketchup">
         </div>
         <div class="prod-info">
             <div class="prod-name">Kissan tomato ketchup</div>
-            <div class="prod-price">₹114</div>
+            <div class="price-box">
+              <span class="mrp-price">₹140</span>
+              <span class="sell-price">₹120</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -504,7 +564,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Tata Salt 1 kg</div>
-            <div class="prod-price">₹26</div>
+           <div class="price-box">
+              <span class="mrp-price">₹30</span>
+              <span class="sell-price">₹26</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -522,7 +586,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Harpic toilet cleaner 1 L</div>
-            <div class="prod-price">₹209</div>
+            <div class="price-box">
+              <span class="mrp-price">₹299</span>
+              <span class="sell-price">₹209</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -540,7 +608,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Anmol Dream lite Biscuit 200 g</div>
-            <div class="prod-price">₹27</div>
+            <div class="price-box">
+              <span class="mrp-price">₹30</span>
+              <span class="sell-price">₹27</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -558,7 +630,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Britania Bourbon 50/60 g</div>
-            <div class="prod-price">₹9</div>
+            <div class="price-box">
+              <span class="mrp-price">₹10</span>
+              <span class="sell-price">₹9</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -576,7 +652,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Britania gooday family pack</div>
-            <div class="prod-price">₹130</div>
+            <div class="price-box">
+              <span class="mrp-price">₹260</span>
+              <span class="sell-price">₹130</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -588,13 +668,17 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Britania jim jam 92/100 g" data-price="22" data-category="Cookies/Biscuits">
+    <div class="product-card" data-name="Britania jim jam 92/100 g" data-price="23" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.bbassets.com/media/uploads/p/l/100012363_15-britannia-treat-jim-jam-cream-biscuits.jpg" alt="jim jam">
         </div>
         <div class="prod-info">
             <div class="prod-name">Britania jim jam 92/100 g</div>
-            <div class="prod-price">₹22</div>
+            <div class="price-box">
+              <span class="mrp-price">₹25</span>
+              <span class="sell-price">₹23</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -612,7 +696,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Britania Little Heart 30 g</div>
-            <div class="prod-price">₹9</div>
+            <div class="price-box">
+              <span class="mrp-price">₹10</span>
+              <span class="sell-price">₹9</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -630,7 +718,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Britania Marie Gold 64/73.8 g</div>
-            <div class="prod-price">₹9</div>
+            <div class="price-box">
+              <span class="mrp-price">₹10</span>
+              <span class="sell-price">₹9</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -648,7 +740,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Britania Milk Bikis 190 g</div>
-            <div class="prod-price">₹27</div>
+            <div class="price-box">
+              <span class="mrp-price">₹30</span>
+              <span class="sell-price">₹27</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -666,7 +762,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Britania 50-50 sweet and salty 200 g</div>
-            <div class="prod-price">₹31</div>
+            <div class="price-box">
+              <span class="mrp-price">₹35</span>
+              <span class="sell-price">₹31</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -684,7 +784,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Britania Nutri Choice 100 g</div>
-            <div class="prod-price">₹22</div>
+            <div class="price-box">
+              <span class="mrp-price">₹25</span>
+              <span class="sell-price">₹22</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -702,7 +806,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Britania Tiger crunch 60 g</div>
-            <div class="prod-price">₹9</div>
+            <div class="price-box">
+              <span class="mrp-price">₹10</span>
+              <span class="sell-price">₹9</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -720,7 +828,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Britania toast premium 200 g</div>
-            <div class="prod-price">₹36</div>
+            <div class="price-box">
+              <span class="mrp-price">₹40</span>
+              <span class="sell-price">₹36</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -738,7 +850,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Britania Toast Premium 400 g</div>
-            <div class="prod-price">₹77</div>
+            <div class="price-box">
+              <span class="mrp-price">₹85</span>
+              <span class="sell-price">₹77</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -756,7 +872,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Britania Toast Premium 250 g</div>
-            <div class="prod-price">₹45</div>
+            <div class="price-box">
+              <span class="mrp-price">₹50</span>
+              <span class="sell-price">₹45</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -768,13 +888,17 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Britania Gooday cashew cookies 200 g" data-price="40"data-category="Cookies/Biscuits">
+    <div class="product-card" data-name="Britania Gooday cashew cookies 200 g" data-price="41"data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://tiimg.tistatic.com/fp/1/007/707/cashew-butter-cookies-britannia-good-day-120-gm--938.jpg" alt="Biscuit">
         </div>
         <div class="prod-info">
             <div class="prod-name">Britania Gooday cashew cookies 200 g</div>
-            <div class="prod-price">₹40</div>
+            <div class="price-box">
+              <span class="mrp-price">₹45</span>
+              <span class="sell-price">₹41</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -786,13 +910,17 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Britania Gooday chocochip cookies 400 g" data-price="75"data-category="Cookies/Biscuits">
+    <div class="product-card" data-name="Britania Gooday chocochip cookies 400 g" data-price="100"data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=1080/da/cms-assets/cms/product/08e3289a-115d-4fe5-a932-113b80d19ac8.png" alt="Britania biscuit">
         </div>
         <div class="prod-info">
             <div class="prod-name">Britania Gooday chocochip cookies 400 g</div>
-            <div class="prod-price">₹75</div>
+            <div class="price-box">
+              <span class="mrp-price">₹150</span>
+              <span class="sell-price">₹100</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -806,11 +934,15 @@ body {
     </div>
     <div class="product-card" data-name="Britania Jim jam 138/150 g" data-price="36"data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="https://kumaribasket.com/wp-content/uploads/2020/09/Treat-Jimjam-Naughty-Jam-Sandwich-Biscuits.jpg" alt="Britania Biscuit">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-3960-1744364000479&w=640&q=75" alt="Britania Biscuit">
         </div>
         <div class="prod-info">
             <div class="prod-name">Britania Jim jam 138/150 g</div>
-            <div class="prod-price">₹36</div>
+            <div class="price-box">
+              <span class="mrp-price">₹40</span>
+              <span class="sell-price">₹36</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -828,7 +960,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Britania Marie gold 250 g</div>
-            <div class="prod-price">₹36</div>
+            <div class="price-box">
+              <span class="mrp-price">₹40</span>
+              <span class="sell-price">₹36</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -840,13 +976,17 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Britania Pure Magic Chocolush 253/300 g" data-price="99"data-category="Cookies/Biscuits">
+    <div class="product-card" data-name="Britania Pure Magic Chocolush 253/300 g" data-price="128"data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.bbassets.com/media/uploads/p/l/40197804_13-britannia-pure-magic-chocolush-cookies.jpg" alt="Britania biscuit">
         </div>
         <div class="prod-info">
             <div class="prod-name">Britania Pure Magic Chocolush 253/300 g</div>
-            <div class="prod-price">₹99</div>
+            <div class="price-box">
+              <span class="mrp-price">₹170</span>
+              <span class="sell-price">₹128</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -2226,13 +2366,13 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Futta Chana 250g" data-price="35">
+    <div class="product-card" data-name="Toor Dal Rajbhog 1kg" data-price="115">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30804-1772093309876&w=640&q=75">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30671-1750498249855&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Futta Chana 250g</div>
-            <div class="prod-price">₹35</div>
+            <div class="prod-name">Toor Dal Rajbhog 1kg</div>
+            <div class="prod-price">₹115</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -2244,12 +2384,30 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Futta Chana 500g" data-price="65">
+    <div class="product-card" data-name="Soyabadi 1kg" data-price="72">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30805-1772093347818&w=640&q=75">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30657-1750501430230&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Futta Chana 500g</div>
+            <div class="prod-name">Soyabadi 1kg</div>
+            <div class="prod-price">₹72</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="product-card" data-name="Sabudana 1KG" data-price="65">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30649-1750501770959&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Sabudana 1KG</div>
             <div class="prod-price">₹65</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
@@ -2262,13 +2420,13 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Moong Dal Chilka Green 1KG" data-price="136">
+    <div class="product-card" data-name="Udad Dal Chilka 1kg" data-price="112">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-31000-1753365356503&w=640&q=75">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30675-1750500027006&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Moong Dal Chilka Green 1KG</div>
-            <div class="prod-price">₹136</div>
+            <div class="prod-name">Udad Dal Chilka 1kg</div>
+            <div class="prod-price">₹112</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -2280,13 +2438,13 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Nadda Roll 200g" data-price="13">
+    <div class="product-card" data-name="Wheat Gold 1kg" data-price="40">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-31018-1774074253071&w=640&q=75">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30679-1750500780540&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Nadda Roll 200g</div>
-            <div class="prod-price">₹13</div>
+            <div class="prod-name">Wheat Gold 1kg</div>
+            <div class="prod-price">₹40</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -2298,31 +2456,13 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Papad 3d 250g" data-price="19">
-        <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-31054-1745418199247&w=640&q=75">
-        </div>
-        <div class="prod-info">
-            <div class="prod-name">Papad 3d 250g</div>
-            <div class="prod-price">₹19</div>
-            <div class="stock-text">Available: <span class="stock-val">100</span></div>
-        </div>
-        <div class="action-area">
-            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
-            <div class="qty-control">
-                <button onclick="updateQty(this, -1)">-</button>
-                <span class="qty-val">0</span>
-                <button onclick="updateQty(this, 1)">+</button>
-            </div>
-        </div>
-    </div>
-    <div class="product-card" data-name="Papad 3d 500g" data-price="37">
+    <div class="product-card" data-name="White Matar 1kg" data-price="55">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-31055-1772168419309&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Papad 3d 500g</div>
-            <div class="prod-price">₹37</div>
+            <div class="prod-name">White Matar 1kg</div>
+            <div class="prod-price">₹55</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -2874,12 +3014,48 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+     <div class="product-card" data-name="Aashirvaad Atta Multigrains 5kg" data-price="320">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-198-1744110664265&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
+            <div class="prod-name">Aashirvaad Atta Multigrains 5kg</div>
+            <div class="prod-price">₹320</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Aashirvaad Shuddh Chakki Atta 10 kg" data-price="420">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-201-1744111571243&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Aashirvaad Shuddh Chakki Atta 10 kg</div>
+            <div class="prod-price">₹420</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Aashirvaad Shuddh Chakki Atta 5 kg" data-price="17">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-202-1770810466061&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Aashirvaad Shuddh Chakki Atta 5 kg</div>
             <div class="prod-price">₹17</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
@@ -2892,12 +3068,66 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+     <div class="product-card" data-name="Nilons Soya Chunks 500g" data-price="44">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-7606-1751008160748&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
+            <div class="prod-name">Nilons Soya Chunks 500g</div>
+            <div class="prod-price">₹44</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Nilons Mini Soya Chunks 200g" data-price="40">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-7609-1751008304259&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Nilons Mini Soya Chunks 200g</div>
+            <div class="prod-price">₹40</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Patanjali Besan 500g" data-price="59.50">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-8414-1745742082204&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Patanjali Besan 500g</div>
+            <div class="prod-price">₹59.50</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Patanjali Daliya 500g" data-price="17">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-8424-1745755945981&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Patanjali Daliya 500g</div>
             <div class="prod-price">₹17</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
@@ -2910,12 +3140,102 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+     <div class="product-card" data-name="Besan 1kg" data-price="80">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30534-1750500336701&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
+            <div class="prod-name">Besan 1kg</div>
+            <div class="prod-price">₹80</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Chana Dal 1kg" data-price="75">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30536-1750498458583&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Chana Dal 1kg</div>
+            <div class="prod-price">₹75</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Desi Chana 1kg" data-price="80">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30542-1750500083078&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Desi Chana 1kg</div>
+            <div class="prod-price">₹80</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Falli Dana White 1kg" data-price="135">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30546-1750500134799&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Falli Dana White 1kg</div>
+            <div class="prod-price">₹135</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Falli Dana Red 1kg" data-price="165">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30547-1750499446881&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Falli Dana Red 1kg</div>
+            <div class="prod-price">₹165</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Moong Dal Chilkha 1kg" data-price="105">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30596-1751028667770&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Moong Dal Chilkha 1kg</div>
             <div class="prod-price">₹17</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
@@ -2928,12 +3248,552 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+     <div class="product-card" data-name="Hara matar 1kg" data-price="90">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30551-1750837448152&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Hara matar 1kg</div>
+            <div class="prod-price">₹90</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Kabuli Chana 1kg" data-price="121">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30561-1750499985652&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Kabuli Chana 1kg</div>
+            <div class="prod-price">₹121</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Moong Mogar 1kg" data-price="108">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30597-1750499625757&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Moong Mogar 1kg</div>
+            <div class="prod-price">₹108</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Moong Whole 1kg" data-price="108">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30598-1750500277832&w=640&q=75">
         </div>
         <div class="prod-info">
             <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
+            <div class="prod-price">₹108</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Rajma Chitra 1kg" data-price="135">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30612-1750506946297&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Rajma Chitra 1kg</div>
+            <div class="prod-price">₹135</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Rice Bpt (aj) 1kg" data-price="42">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30617-1750499899350&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Rice Bpt (aj) 1kg</div>
+            <div class="prod-price">₹42</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Basmati Rice 1kg" data-price="99">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30619-1750499736847&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Basmati Rice 1kg</div>
+            <div class="prod-price">₹99</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="HMT rice 1kg" data-price="50">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30622-1750498336339&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">HMT rice 1kg</div>
+            <div class="prod-price">₹50</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Rice Khanda Shivaji 1kg" data-price="36">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30631-1750502373712&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Rice Khanda Shivaji 1kg</div>
+            <div class="prod-price">₹36</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Rice Rajshree Malai 1kg" data-price="60">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30634-1750501079788&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Rice Rajshree Malai 1kg</div>
+            <div class="prod-price">₹60</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Rice Shreeram 1kg" data-price="66">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30640-1750500611983&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Rice Shreeram 1kg</div>
+            <div class="prod-price">₹66</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Davat Pulao basmati Rice 1kg" data-price="119">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30709-1744547670551&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Davat Pulao basmati Rice 1kg</div>
+            <div class="prod-price">₹119</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Davat Pulao basmati Rice 5kg" data-price="599">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30710-1768994205569&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Davat Pulao basmati Rice 5kg</div>
+            <div class="prod-price">₹599</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Fortune Chakki Fresh Atta 10kg" data-price="425">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30777-1770894383067&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Fortune Chakki Fresh Atta 10kg</div>
+            <div class="prod-price">₹425</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Fortune Chakki Fresh Atta 5kg" data-price="220">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30778-1768730417060&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Fortune Chakki Fresh Atta 5kg</div>
+            <div class="prod-price">₹220</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="India Gate Basmati Rice 5kg" data-price="599">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30842-1750775479362&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">India Gate Basmati Rice 5kg</div>
+            <div class="prod-price">₹599</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Nutrela Soya Chunks 1kg" data-price="129">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-31034-1745391289803&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Nutrela Soya Chunks 1kg</div>
+            <div class="prod-price">₹129</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Nutrela Soya Mini Chunks 200g" data-price="42">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-31038-1745394384452&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Nutrela Soya Mini Chunks 200g</div>
+            <div class="prod-price">₹42</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Shubham Kesar Rice Malai 10kg" data-price="629">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-35471-1749027732442&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Shubham Kesar Rice Malai 10kg</div>
+            <div class="prod-price">₹629</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Fortune Soya Badi 200g" data-price="48">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-36662-1750679813549&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Fortune Soya Badi 200g</div>
+            <div class="prod-price">₹48</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Fortune Chana Besan 500g" data-price="52">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-38915-1744289125552&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Fortune Chana Besan 500g</div>
+            <div class="prod-price">₹52</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Fortune Maida 500g" data-price="28">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-38916-1744291614763&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Fortune Maida 500g</div>
+            <div class="prod-price">₹28</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Silver Drop Lite Sunflower oil 1l" data-price="150">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-137-1744206131159&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Silver Drop Lite Sunflower oil 1l</div>
+            <div class="prod-price">₹150</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Silver Drop Lite Sunflower oil 4l/5kg" data-price="775">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-138-1770873086916&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Silver Drop Lite Sunflower oil 4l/5kg</div>
+            <div class="prod-price">₹775</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Silver Drop Lite Sunflower oil 15l" data-price="2219">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-139-1744441856904&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Silver Drop Lite Sunflower oil 15l</div>
+            <div class="prod-price">₹2219</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Vacahan Desi Ghee 1l" data-price="709">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-188-1770976913413&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Vacahan Desi Ghee 1l</div>
+            <div class="prod-price">₹709</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Vacahan Desi Ghee 500ml" data-price="359">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-189-1770977072607&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
+            <div class="prod-price">₹359</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Abis Rice Bran Oil 15kg" data-price="2349">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-203-1744114568935&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Abis Rice Bran Oil 15kg</div>
+            <div class="prod-price">₹2349</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Abis Rice Bran Oil 5l/4kg" data-price="679">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-205-1744114994154&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Abis Rice Bran Oil 5l/4kg</div>
+            <div class="prod-price">₹679</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Abis Soya 1l/800g" data-price="137">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-208-1744115131575&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Abis Soya 1l/800g</div>
+            <div class="prod-price">₹137</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+     <div class="product-card" data-name="Abis Soya Oil 15kg" data-price="2259">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-209-1744115346751&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Abis Soya Oil 15kg</div>
             <div class="prod-price">₹17</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
@@ -2946,13 +3806,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+     <div class="product-card" data-name="Abis Soya Oil 5l/4kg" data-price="729">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-212-1744115464513&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Abis Soya Oil 5l/4kg</div>
+            <div class="prod-price">₹729</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -2964,13 +3824,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+     <div class="product-card" data-name="Dholpur Fresh Desi Ghee 180ml/200g" data-price="109">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-325-1767337761272&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Dholpur Fresh Desi Ghee 180ml/200g</div>
+            <div class="prod-price">₹109</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -2982,13 +3842,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+     <div class="product-card" data-name="Dabar Sarso Amla oil 170ml" data-price="50">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-4599-1746430518964&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Dabar Sarso Amla oil 170ml</div>
+            <div class="prod-price">₹50</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3000,13 +3860,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+     <div class="product-card" data-name="Navratna Oil 200ml" data-price="139">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-4964-1744192195486&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Navratna Oil 200ml</div>
+            <div class="prod-price">₹139</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3018,13 +3878,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+     <div class="product-card" data-name="Nihar Shanti Amla 500ml/550ml" data-price="166">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-7530-1751012849736&w=640&q=75">
         </div>
         <div class="prod-info">
             <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-price">₹166</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3036,13 +3896,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+     <div class="product-card" data-name="Nihar Shanti Badam Amla Oil 400ml/450ml" data-price="105">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-7532-1751012917515&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Nihar Shanti Badam Amla Oil 400ml/450ml</div>
+            <div class="prod-price">₹105</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3054,13 +3914,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+     <div class="product-card" data-name="Amul Cow Ghee 1l" data-price="583">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30478-1770892180490&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Amul Cow Ghee 1l</div>
+            <div class="prod-price">₹583</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3072,13 +3932,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+     <div class="product-card" data-name="Amul Pure Ghee 1l" data-price="570">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Amul Pure Ghee 1l</div>
+            <div class="prod-price">₹570</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3090,13 +3950,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+     <div class="product-card" data-name="Anik Ghee 1l Can" data-price="703">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30488-1744202358776&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Anik Ghee 1l Can</div>
+            <div class="prod-price">₹703</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3108,13 +3968,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+     <div class="product-card" data-name="Anik Ghee 500ml Can" data-price="329">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30490-1770892668285&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Anik Ghee 500ml Can</div>
+            <div class="prod-price">₹329</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3126,13 +3986,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+     <div class="product-card" data-name="Dholpur Fresh Desi Ghee 500ml/450ml" data-price="283">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30756-1767336981822&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Dholpur Fresh Desi Ghee 500ml/450ml</div>
+            <div class="prod-price">₹283</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3144,13 +4004,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+     <div class="product-card" data-name="Figaro Oil 200ml" data-price="425">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30771-1744284413745&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Figaro Oil 200ml</div>
+            <div class="prod-price">₹425</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3162,13 +4022,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+     <div class="product-card" data-name="Figaro Olive Oil 500ml" data-price="849">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://skmart-prod.s3.ap-south-1.amazonaws.com/skm/product-30774-1744285790449">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Figaro Olive Oil 500ml</div>
+            <div class="prod-price">₹849</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3180,13 +4040,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+     <div class="product-card" data-name="Fortune Mustard Oil 1l" data-price="181">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30786-1744291164307&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Fortune Mustard Oil 1l</div>
+            <div class="prod-price">₹181</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3198,13 +4058,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+     <div class="product-card" data-name="Fortune Soya Health oil 840g/870g" data-price="156">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30789-1744291745498&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Fortune Soya Health oil 840g/870g</div>
+            <div class="prod-price">₹156</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3216,13 +4076,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+     <div class="product-card" data-name="Fortune Plus Soyabean oil 5l" data-price="885">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30790-1744347587481&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Fortune Plus Soyabean oil 5l</div>
+            <div class="prod-price">₹885</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3234,13 +4094,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Fortune Soya Health Oil 13kg" data-price="2039">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30798-1768378491468&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Fortune Soya Health Oil 13kg</div>
+            <div class="prod-price">₹2039</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3252,13 +4112,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Fortune Sun Lite Refined Sunflower Oil 800gm/870gm" data-price="170">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://skmart-prod.s3.ap-south-1.amazonaws.com/skm/product-30799-1744876394037">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Fortune Sun Lite Refined Sunflower Oil 800gm/870gm</div>
+            <div class="prod-price">₹170</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3270,13 +4130,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Fortune Sun Lite Refined Sunflower Oil 5l" data-price="937">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30800-1744290346267&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Fortune Sun Lite Refined Sunflower Oil 5l</div>
+            <div class="prod-price">₹937</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3288,13 +4148,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Fortune Sun Lite Refined Sunflower Oil 13kg" data-price="2649">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30801-1770894897589&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Fortune Sun Lite Refined Sunflower Oil 13kg</div>
+            <div class="prod-price">₹2649</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3306,13 +4166,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Govardhan Pure Cow Ghee 1l" data-price="749">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30825-1744634088456&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Govardhan Pure Cow Ghee 1l</div>
+            <div class="prod-price">₹749</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3324,13 +4184,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Govardhan Pure Cow Ghee 500ml" data-price="399">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30827-1744634369015&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Govardhan Pure Cow Ghee 500ml</div>
+            <div class="prod-price">₹399</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3342,13 +4202,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Hareli Refined Rice Oil 1l" data-price="132">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30832-1768386201299&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Hareli Refined Rice Oil 1l</div>
+            <div class="prod-price">₹132</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3360,13 +4220,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Hareli Refined Rice Oil 15kg tin" data-price="2139">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30834-1772520577653&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Hareli Refined Rice Oil 15kg tin</div>
+            <div class="prod-price">₹2139</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3378,13 +4238,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Hareli Refined Rice oil 5l" data-price="684">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30835-1744711832380&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Hareli Refined Rice oil 5l</div>
+            <div class="prod-price">₹684</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3396,13 +4256,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Lal Gulab Mustard Oil 500ml" data-price="89">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30932-1746190117413&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Lal Gulab Mustard Oil 500ml</div>
+            <div class="prod-price">₹89</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3414,13 +4274,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Lal Gulab Mustard Oil 1l" data-price="185">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30933-1744373004086&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Lal Gulab Mustard Oil 1l</div>
+            <div class="prod-price">₹185</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3432,13 +4292,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Lal Gulab Mustard Oil 200ml" data-price="43">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-30935-1744373391917&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Lal Gulab Mustard Oil 200ml</div>
+            <div class="prod-price">₹43</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3450,13 +4310,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Patanjali Cow Ghee 1l" data-price="633">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-31058-1745750097448&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Patanjali Cow Ghee 1l</div>
+            <div class="prod-price">₹633</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3468,13 +4328,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Patanjali Kachi Ghani Mustard Oil 1ltr B" data-price="164">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-31065-1744188552847&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Patanjali Kachi Ghani Mustard Oil 1ltr B</div>
+            <div class="prod-price">₹164</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3486,13 +4346,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Vanaspati Dalda 1l/893g" data-price="135">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-31124-1744356574309&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Vanaspati Dalda 1l/893g</div>
+            <div class="prod-price">₹135</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3504,13 +4364,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Vanaspati Dalda 500ml/447g" data-price="70">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-31125-1744363635015&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Vanaspati Dalda 500ml/447g</div>
+            <div class="prod-price">₹70</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3522,13 +4382,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Freedom Refined Oil Sunflower 15l" data-price="2199">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-44980-1744352383209&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Freedom Refined Oil Sunflower 15l</div>
+            <div class="prod-price">₹2199</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3540,13 +4400,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Madhur Sugar 1kg" data-price="50">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-150-1744702671172&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Madhur Sugar 1kg</div>
+            <div class="prod-price">₹50</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3558,13 +4418,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Bandhan Black Salt 500g" data-price="25">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-262-1744291574120&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Bandhan Black Salt 500g</div>
+            <div class="prod-price">₹25</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3576,13 +4436,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Catch Hing Powder 100g" data-price="205">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-4142-1750851969262&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Catch Hing Powder 100g</div>
+            <div class="prod-price">₹205</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3594,13 +4454,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Catch Kashmiri Powder 100g" data-price="82">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-4154-1770890619009&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Catch Kashmiri Powder 100g</div>
+            <div class="prod-price">₹82</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3612,13 +4472,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Catch Turmeric Powder 200g" data-price="60">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-4175-1750839157246&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Catch Turmeric Powder 200g</div>
+            <div class="prod-price">₹60</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3630,13 +4490,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Everest Black Pepper 50g" data-price="83">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5036-1744194999822&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Everest Black Pepper 50g</div>
+            <div class="prod-price">₹83</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3648,13 +4508,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Everest Chat Masala 100g" data-price="79">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5037-1768281353336&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Everest Chat Masala 100g</div>
+            <div class="prod-price">₹79</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3666,13 +4526,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Everest Chhole Masala 100g" data-price="81">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5042-1768284795029&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name"></div>
+            <div class="prod-price">₹</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3684,13 +4544,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Everest Coriander Powder 100g" data-price="38">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5046-1744198213562&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Everest Coriander Powder 100g</div>
+            <div class="prod-price">₹38</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3702,13 +4562,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Everest Garam Masala 100g" data-price="96">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5058-1744199544714&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Everest Garam Masala 100g</div>
+            <div class="prod-price">₹96</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3720,13 +4580,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Everest Hing Powder 25g" data-price="43">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5062-1750672385003&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Everest Hing Powder 25g</div>
+            <div class="prod-price">₹43</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3738,13 +4598,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Everest Kasuri Methi 100g" data-price="92">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5073-1768718780902&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Everest Kasuri Methi 100g</div>
+            <div class="prod-price">₹92</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3756,13 +4616,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Everest Kitchen King Masala 100g" data-price="77">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Everest Kitchen King Masala 100g</div>
+            <div class="prod-price">₹77</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3774,13 +4634,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Everest Paw Bhaji Masala 100g" data-price="83">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5082-1750672605652&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Everest Paw Bhaji Masala 100g</div>
+            <div class="prod-price">₹83</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3792,13 +4652,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Everest Sambhar Masala 100g" data-price="74">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5089-1744265706934&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Everest Sambhar Masala 100g</div>
+            <div class="prod-price">₹74</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3810,13 +4670,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Everest Shahi Paneer Masala 100g" data-price="83">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5093-1750674700264&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Everest Shahi Paneer Masala 100g</div>
+            <div class="prod-price">₹83</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3828,13 +4688,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Everest TikhalaL Red Chilli Powder 100g" data-price="58">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5106-1768720181929&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Everest TikhalaL Red Chilli Powder 100g</div>
+            <div class="prod-price">₹58</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3846,13 +4706,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Everest Turmeric Powder 100g" data-price="43">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5110-1768720456766&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Everest Turmeric Powder 100g</div>
+            <div class="prod-price">₹43</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3864,13 +4724,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Hazmola Imli 120tab" data-price="65">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5847-1750831833655&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Hazmola Imli 120tab</div>
+            <div class="prod-price">₹65</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3882,13 +4742,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Hawaban Harde 100g" data-price="109">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5972-1750764662391&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Hawaban Harde 100g</div>
+            <div class="prod-price">₹109</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3900,13 +4760,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Maggie masala Magic 12units*6g" data-price="55">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-7071-1744705224283&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Maggie masala Magic 12units*6g</div>
+            <div class="prod-price">₹55</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3918,13 +4778,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Maggie masala Magic" data-price="4.60">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-7072-1744705448380&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Maggie masala Magic</div>
+            <div class="prod-price">₹4.60</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3936,13 +4796,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Nilons Gren Chilli Pickle 500g" data-price="101">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-7534-1751027171368&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Nilons Gren Chilli Pickle 500g</div>
+            <div class="prod-price">₹101</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3954,13 +4814,13 @@ body {
             </div>
         </div>
     </div>
-     <div class="product-card" data-name="Too Yum Karare Chilli Achari 70g" data-price="17">
+    <div class="product-card" data-name="Nilons Classic Mango Pickle 900g" data-price="125">
         <div class="prod-img-box" onclick="zoomImage(this)">
-            <img src="">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-7552-1770809015286&w=640&q=75">
         </div>
         <div class="prod-info">
-            <div class="prod-name">Too Yum Karare Chilli Achari 70g</div>
-            <div class="prod-price">₹17</div>
+            <div class="prod-name">Nilons Classic Mango Pickle 900g</div>
+            <div class="prod-price">₹125</div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -3972,13 +4832,279 @@ body {
             </div>
         </div>
     </div>
+    <div class="product-card" data-name="Nilons Mixed Pickle 400g" data-price="120">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-7591-1745059697053&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Nilons Mixed Pickle 400g</div>
+            <div class="prod-price">₹120</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="product-card" data-name="Nilons Mango Pickle 400g" data-price="120">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-7585-1745051161416&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Nilons Mango Pickle 400g</div>
+            <div class="prod-price">₹120</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="product-card" data-name="Puro Heathly Salt 500g" data-price="49">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-8756-1768307966651&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Puro Heathly Salt 500g</div>
+            <div class="prod-price">₹49</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="product-card" data-name="Puro Heathly Salt 1kg" data-price="85">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-8755-1744269599747&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Puro Heathly Salt 1kg</div>
+            <div class="prod-price">₹85</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="product-card" data-name="Ram Bandhu Achar Masala" data-price="49">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-8788-1751023688205&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Ram Bandhu Achar Masala</div>
+            <div class="prod-price">₹49</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="product-card" data-name="Ram Bandhu Achar Masala 500g" data-price="140">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-8789-1744285651671&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Ram Bandhu Achar Masala 500g</div>
+            <div class="prod-price">₹140</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="product-card" data-name="Ram Bandhu Mango Pickle 350g" data-price="75">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-8796-1744285994626&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Ram Bandhu Mango Pickle 350g</div>
+            <div class="prod-price">₹75</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="product-card" data-name="Ramdev hing 25g" data-price="70">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-8812-1744290742815&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Ramdev hing 25g</div>
+            <div class="prod-price">₹70</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="product-card" data-name="Ginger Garlic Paste" data-price="42">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-9154-1744442569438&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Ginger Garlic Paste</div>
+            <div class="prod-price">₹42</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="product-card" data-name="Pasta Masala" data-price="4.55">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-9156-1744442705753&w=640&q=75">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name">Pasta Masala</div>
+            <div class="price-box">
+              <span class="mrp-price">₹8.00</span>
+              <span class="sell-price">₹4.55</span>
+              <span class="discount-tag"></span>
+            </div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="product-card" data-name="" data-price="">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name"></div>
+            <div class="prod-price">₹</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="product-card" data-name="" data-price="">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name"></div>
+            <div class="prod-price">₹</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="product-card" data-name="" data-price="">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name"></div>
+            <div class="prod-price">₹</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+    <div class="product-card" data-name="" data-price="">
+        <div class="prod-img-box" onclick="zoomImage(this)">
+            <img src="">
+        </div>
+        <div class="prod-info">
+            <div class="prod-name"></div>
+            <div class="prod-price">₹</div>
+            <div class="stock-text">Available: <span class="stock-val">100</span></div>
+        </div>
+        <div class="action-area">
+            <button class="add-btn" onclick="updateQty(this, 1)">ADD</button>
+            <div class="qty-control">
+                <button onclick="updateQty(this, -1)">-</button>
+                <span class="qty-val">0</span>
+                <button onclick="updateQty(this, 1)">+</button>
+            </div>
+        </div>
+    </div>
+    
 </div>
 
 <div class="checkout-drawer collapsed" id="checkoutDrawer">
-    <div class="slide-handle" onclick="toggleDrawer()" style="width: 100%; height: 30px; display: flex; justify-content: center; align-items: center; cursor: pointer;">
-    <div style="width: 40px; height: 5px; background: #ddd; border-radius: 10px;"></div>
-</div>
+    
+    <div class="slide-handle" onclick="toggleDrawer()" 
+         style="width: 100%; height: 30px; display: flex; justify-content: center; align-items: center; cursor: pointer;">
 
+        <div style="
+            font-size: 40px;
+            color: #767676;
+            user-select: none;
+        ">
+          &#11165;
+        </div>
+
+    </div>
     <div class="cart-summary" id="cart-summary">
     <span id="items-count">0 Items</span>
 
@@ -4006,11 +5132,7 @@ body {
 </div>
 
 
-    <div class="location-card" id="location-card">
-        <div id="loc-text" style="font-size: 14px; font-weight: 700; color: var(--pp-red);">📍 Location Required</div>
-        <button class="loc-btn" id="loc-btn" onclick="getLocation()">Allow Live Location</button>
-    </div>
-
+   
     <div style="display: flex; gap: 10px;">
         <input type="text" id="cust_name" class="input-pill" placeholder="Name">
         <input type="tel" id="cust_phone" class="input-pill" placeholder="Phone">
@@ -4021,16 +5143,38 @@ body {
         id="other-product" 
         class="input-pill" 
         placeholder="Didn't find a product? Type here (optional)">
+        <div class="location-card" id="location-card">
+        <div id="loc-text" style="font-size: 14px; font-weight: 700; color: var(--pp-red);">📍 Location Required</div>
+        <button class="loc-btn" id="loc-btn" onclick="getLocation()">Allow Live Location</button>
+    </div>
+
 </div>
    
     <button id="order-btn" class="btn-order" onclick="sendOrder()" disabled>SHARE LOCATION TO ORDER</button>
+     
 </div>
+
 
 <div id="imageModal" class="modal" onclick="closeModal()">
     <div id="modalContent" class="modal-content"></div> 
 </div>
-
 <script>
+document.querySelectorAll('.price-box').forEach(box => {
+    const mrp = parseFloat(
+        box.querySelector('.mrp-price').innerText.replace('₹','')
+    );
+
+    const sell = parseFloat(
+        box.querySelector('.sell-price').innerText.replace('₹','')
+    );
+
+    const discount = Math.round(((mrp - sell) / mrp) * 100);
+
+    box.querySelector('.discount-tag').innerText = discount + "% OFF";
+});
+</script>
+<script>
+    
     function getDeliveryCharge(total) {
     if (total >= 80 && total <= 499) return 39;
     if (total >= 500 && total <= 999) return 49;
@@ -4261,6 +5405,7 @@ function filterCategory(event, category) {
         }
     });
 }
+
 
 
 
