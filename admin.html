@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PPCart Admin Dashboard</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #f4f7f6; 
+            color: #333;
+            margin: 0;
+            padding: 40px 20px;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        h1 { color: #2c3e50; margin-bottom: 30px; font-size: 2.2em; }
+
+        .analytics-row {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        .analytics-card {
+            flex: 1;
+            min-width: 200px;
+            background: linear-gradient(135deg, #1e88e5, #1565c0);
+            color: white;
+            padding: 20px 25px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .analytics-card.orange { background: linear-gradient(135deg, #ff9f43, #ff7a00); }
+        .analytics-card.green  { background: linear-gradient(135deg, #27ae60, #1e8449); }
+        .analytics-card h2 { margin: 0 0 8px 0; font-size: 1em; font-weight: 500; opacity: 0.9; }
+        .analytics-card .big-num { font-size: 2em; font-weight: 800; }
+        #topProduct { color: #ffeb3b; font-weight: bold; font-size: 1.1em; }
+
+        .table-container {
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            overflow: auto;
+        }
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 15px 20px; text-align: left; vertical-align: top; }
+        th { 
+            background-color: #2c3e50; color: white;
+            font-weight: 500; letter-spacing: 0.5px;
+            text-transform: uppercase; font-size: 0.85em;
+        }
+        td { border-bottom: 1px solid #e0e0e0; color: #555; font-size: 14px; }
+        tbody tr:nth-child(even) { background-color: #fcfcfc; }
+        tbody tr:hover { background-color: #f1f8ff; transition: 0.2s; }
+        tbody tr:last-child td { border-bottom: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🛒 PPCart Order Dashboard</h1>
+        
+        <div class="analytics-row">
+            <div class="analytics-card">
+                <h2>📦 Total Orders</h2>
+                <div class="big-num" id="totalOrders">...</div>
+            </div>
+            <div class="analytics-card green">
+                <h2>💰 Total Revenue</h2>
+                <div class="big-num" id="totalRevenue">...</div>
+            </div>
+            <div class="analytics-card orange">
+                <h2>🏆 Most Popular Product</h2>
+                <span id="topProduct">Calculating...</span>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date & Time</th>
+                        <th>Customer</th>
+                        <th>Items Ordered</th>
+                        <th>Subtotal & Delivery</th>
+                        <th>Grand Total</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="orderTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script type="module" src="admin.js"></script>
+</body>
+</html>
