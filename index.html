@@ -287,8 +287,56 @@ body {
         <img src="https://i.postimg.cc/pTHKBjnC/16-january-logo.png" class="logo-img" alt="Logo">
         <div class="brand-name">PPCART</div>
     </div>
-    <div style="font-size: 16px; font-weight: 700;">Customer Help Desk </div>
+    <button onclick="openMenu()" style="background: var(--pp-orange); color: white; border: none; padding: 10px 18px; border-radius: 25px; font-weight: 700; font-size: 15px; cursor: pointer; box-shadow: 0 3px 10px rgba(255,122,0,0.35);">☰ Menu</button>
 </header>
+
+<!-- ===== MENU MODAL ===== -->
+<div id="menuModal" style="display:none; position:fixed; z-index:9998; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.55); backdrop-filter:blur(4px); justify-content:center; align-items:flex-end;">
+    <div style="background:#fff; width:100%; border-radius:30px 30px 0 0; padding:28px 22px 36px; box-sizing:border-box; animation: slideUp 0.3s ease;">
+        <div style="text-align:center; margin-bottom:18px;">
+            <div style="font-size: 38px; color: var(--pp-orange); font-weight: 900; line-height: 1; text-shadow: 0 1px 4px rgba(255,122,0,0.3);"><strong>^</strong></div>
+        </div>
+        <h2 style="margin:0 0 20px; font-size:20px; font-weight:800; color:var(--pp-dark);">📋 Menu</h2>
+
+        <!-- Main Menu Options -->
+        <div id="menu-home">
+            <button onclick="showMenuPanel('feedback-panel')" style="width:100%; padding:16px; margin-bottom:12px; border-radius:14px; border:2px solid #f0f0f0; background:#fff; font-size:16px; font-weight:700; cursor:pointer; text-align:left; display:flex; align-items:center; gap:12px;">
+                <span style="font-size:22px;">✉️</span> Customer Feedback
+            </button>
+            <button onclick="showMenuPanel('helpdesk-panel')" style="width:100%; padding:16px; border-radius:14px; border:2px solid #f0f0f0; background:#fff; font-size:16px; font-weight:700; cursor:pointer; text-align:left; display:flex; align-items:center; gap:12px;">
+                <span style="font-size:22px;">🎧</span> Customer Help Desk
+            </button>
+            <button onclick="closeMenu()" style="width:100%; padding:14px; margin-top:16px; border-radius:14px; border:none; background:#f5f5f5; font-size:15px; font-weight:700; cursor:pointer; color:#777;">Close</button>
+        </div>
+
+        <!-- Customer Feedback Panel -->
+        <div id="feedback-panel" style="display:none;">
+            <button onclick="showMenuPanel('menu-home')" style="background:none; border:none; font-size:15px; font-weight:700; color:var(--pp-orange); cursor:pointer; margin-bottom:14px; padding:0;">← Back</button>
+            <h3 style="margin:0 0 16px; font-size:18px; font-weight:800;">✉️ Customer Feedback</h3>
+            <input id="fb-from" type="email" placeholder="Your Email (From)" style="width:100%; padding:13px 15px; border:1px solid #ddd; border-radius:12px; font-size:15px; margin-bottom:10px; box-sizing:border-box; outline:none;">
+            <textarea id="fb-comment" placeholder="Your feedback / comment..." rows="4" style="width:100%; padding:13px 15px; border:1px solid #ddd; border-radius:12px; font-size:15px; resize:none; box-sizing:border-box; margin-bottom:10px; outline:none; font-family:inherit;"></textarea>
+            <p style="font-size:12px; color:#aaa; margin:0 0 12px;">📨 Will be sent to: <strong>ppcartfeedback@gmail.com</strong></p>
+            <button onclick="sendFeedback()" style="width:100%; padding:15px; border-radius:14px; border:none; background:linear-gradient(135deg,#ff7a00,#ff3d00); color:#fff; font-size:16px; font-weight:800; cursor:pointer; box-shadow:0 4px 12px rgba(255,87,34,0.4);">📤 Send Feedback</button>
+            <div id="fb-status" style="margin-top:10px; font-size:14px; font-weight:700; text-align:center;"></div>
+        </div>
+
+        <!-- Help Desk Panel -->
+        <div id="helpdesk-panel" style="display:none;">
+            <button onclick="showMenuPanel('menu-home')" style="background:none; border:none; font-size:15px; font-weight:700; color:var(--pp-orange); cursor:pointer; margin-bottom:14px; padding:0;">← Back</button>
+            <h3 style="margin:0 0 20px; font-size:18px; font-weight:800;">🎧 Customer Help Desk</h3>
+            <div style="background:#fff3e6; border-radius:16px; padding:28px 22px; text-align:center;">
+                <div style="font-size:44px; margin-bottom:12px;">📞</div>
+                <p style="margin:0 0 8px; font-size:14px; color:#999; font-weight:600;">Call us anytime</p>
+                <a href="tel:+919826915121" style="font-size:28px; font-weight:900; color:var(--pp-orange); text-decoration:none; display:block;">+91 98269 15121</a>
+                <p style="margin:12px 0 0; font-size:13px; color:#bbb;">Mon – Sun &nbsp;·&nbsp; 8 AM – 10 PM</p>
+            </div>
+            <button onclick="closeMenu()" style="width:100%; padding:14px; margin-top:16px; border-radius:14px; border:none; background:#f5f5f5; font-size:15px; font-weight:700; cursor:pointer; color:#777;">Close</button>
+        </div>
+    </div>
+</div>
+<style>
+@keyframes slideUp { from { transform: translateY(100%); } to { transform: translateY(0); } }
+</style>
 
 <div class="delivery-promise">
     <div class="speed-text">⚡ Super fast delivery in 15-20 minutes</div>
@@ -297,12 +345,12 @@ body {
 <div class="search-container">
     <div class="search-wrapper">
         <span class="search-icon">🔍</span>
-        <input type="text" id="search-bar" class="search-input" placeholder="Search products..." onkeyup="filterProducts()">
+        <input type="text" id="search-bar" class="search-input" placeholder="Search products..." onkeyup="filterProducts()" oninput="toggleCategoryBar(this.value)">
     </div>
 </div>
 <!-- CATEGORY FILTER -->
 <!-- CATEGORY ICON BAR -->
-<div class="category-bar">
+<div class="category-bar" id="category-bar">
     <div class="cat-icon active" onclick="filterCategory(event,'all')">
         <div class="cat-emoji">🛒</div>
         <div class="cat-label">All</div>
@@ -998,13 +1046,17 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Britania Treat cream waffers orange 55g" data-price="22.5"data-category="Cookies/Biscuits">
+    <div class="product-card" data-name="Britania Treat cream waffers orange 55g" data-price="25"data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.bbassets.com/media/uploads/p/l/40224027_10-britannia-treat-treat-creme-wafers-orange.jpg" alt="Britania biscuit">
         </div>
         <div class="prod-info">
             <div class="prod-name">Britania Treat cream waffers 55g </div>
-            <div class="prod-price">₹22.5</div>
+            <div class="price-box">
+              <span class="mrp-price">₹50</span>
+              <span class="sell-price">₹25</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1016,13 +1068,17 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Britania Treat cream waffers orange 55g" data-price="22.5"data-category="Cookies/Biscuits">
+    <div class="product-card" data-name="Britania Treat cream waffers orange 55g" data-price="25"data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://media.britannia.co.in/large_1041_x_484_Choco_01e91a6a6f.png" alt="Britania Biscuit">
         </div>
         <div class="prod-info">
             <div class="prod-name">Britania Treat cream waffers orange 55g</div>
-            <div class="prod-price">₹22.5</div>
+            <div class="price-box">
+              <span class="mrp-price">₹50</span>
+              <span class="sell-price">₹25</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1040,7 +1096,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Cadbury Oreo choco cream biscuit 108.55g</div>
-            <div class="prod-price">₹36</div>
+            <div class="price-box">
+              <span class="mrp-price">₹40</span>
+              <span class="sell-price">₹36</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1058,7 +1118,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Cadbury Oreo choco cream biscuit 41.75</div>
-            <div class="prod-price">₹9.10</div>
+            <div class="price-box">
+              <span class="mrp-price">₹10</span>
+              <span class="sell-price">₹9.10</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1076,7 +1140,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Dukes waffy choco roll 250 g</div>
-            <div class="prod-price">₹83</div>
+            <div class="price-box">
+              <span class="mrp-price">₹165</span>
+              <span class="sell-price">₹83</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1094,7 +1162,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Dukes waffy strawberry roll 250 g</div>
-            <div class="prod-price">₹83</div>
+            <div class="price-box">
+              <span class="mrp-price">₹165</span>
+              <span class="sell-price">₹83</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1106,13 +1178,17 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Karachi fruit biscuit 200g" data-price="85"data-category="Cookies/Biscuits">
+    <div class="product-card" data-name="Karachi fruit biscuit 200g" data-price="95"data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://m.media-amazon.com/images/I/51kDADW45cL._AC_UF894,1000_QL80_.jpg" alt="fruit biscuit">
         </div>
         <div class="prod-info">
             <div class="prod-name">Karachi fruit biscuit 200g</div>
-            <div class="prod-price">₹85</div>
+            <div class="price-box">
+              <span class="mrp-price">₹110</span>
+              <span class="sell-price">₹95</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1130,7 +1206,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Karachi kaju nankhatai</div>
-            <div class="prod-price">₹146</div>
+            <div class="price-box">
+              <span class="mrp-price">₹170</span>
+              <span class="sell-price">₹146</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1148,7 +1228,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Lottie choco pie 12pack*28g (336g)</div>
-            <div class="prod-price">₹110</div>
+            <div class="price-box">
+              <span class="mrp-price">₹160</span>
+              <span class="sell-price">₹110</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1166,7 +1250,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Lottie choco pie 18 pack (504g)</div>
-            <div class="prod-price">₹153</div>
+            <div class="price-box">
+              <span class="mrp-price">₹205</span>
+              <span class="sell-price">₹153</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1178,13 +1266,17 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Parle g gluco 250g" data-price="24" data-category="Cookies/Biscuits">
+    <div class="product-card" data-name="Parle g gluco 250g" data-price="27" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://ik.imagekit.io/wlfr/wellness/images/products/340631-1.jpg" alt="biscuit">
         </div>
         <div class="prod-info">
             <div class="prod-name">Parle g gluco 250g</div>
-            <div class="prod-price">₹24</div>
+            <div class="price-box">
+              <span class="mrp-price">₹30</span>
+              <span class="sell-price">₹27</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1196,13 +1288,17 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Parle happy happy chocochip cookies 63g" data-price="8" data-category="Cookies/Biscuits">
+    <div class="product-card" data-name="Parle happy happy chocochip cookies 63g" data-price="9" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRS3B29ZXSNeywe-YFulz4s6dmExuI1PXT2qw&s" alt="biscuit">
         </div>
         <div class="prod-info">
             <div class="prod-name">Parle happy happy chocochip cookies 63g</div>
-            <div class="prod-price">₹8</div>
+            <div class="price-box">
+              <span class="mrp-price">₹10</span>
+              <span class="sell-price">₹9</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1214,13 +1310,17 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Parle hide and seek 100g" data-price="19" data-category="Cookies/Biscuits">
+    <div class="product-card" data-name="Parle hide and seek 100g" data-price="27" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLNIiRd3SC8QyQLh9GP7sdfEIu4q3KI3GMtg&s" alt="biscuit">
         </div>
         <div class="prod-info">
             <div class="prod-name">Parle hide and seek 100g</div>
-            <div class="prod-price">₹19</div>
+            <div class="price-box">
+              <span class="mrp-price">₹30</span>
+              <span class="sell-price">₹27</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1232,13 +1332,17 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Parle hide and seek 200g" data-price="45" data-category="Cookies/Biscuits">
+    <div class="product-card" data-name="Parle hide and seek 200g" data-price="54" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.bbassets.com/media/uploads/p/l/40009931_10-parle-hide-seek-chocolate.jpg" alt="Biscuit">
         </div>
         <div class="prod-info">
             <div class="prod-name">Parle hide and seek 200g</div>
-            <div class="prod-price">₹45</div>
+            <div class="price-box">
+              <span class="mrp-price">₹60</span>
+              <span class="sell-price">₹54</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1250,13 +1354,17 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Parle hide and seek cream sandwiches 400g" data-price="67" data-category="Cookies/Biscuits">
+    <div class="product-card" data-name="Parle hide and seek cream sandwiches 400g" data-price="80" data-category="Cookies/Biscuits">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.bbassets.com/media/uploads/p/l/40289826_2-parle-hide-seek-creme-combi-creme-sandwiches-assorted-flavours.jpg" alt="Cream biscuit">
         </div>
         <div class="prod-info">
             <div class="prod-name">Parle hide and seek cream sandwiches 400g</div>
-            <div class="prod-price">₹67</div>
+            <div class="price-box">
+              <span class="mrp-price">₹160</span>
+              <span class="sell-price">₹80</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1268,13 +1376,17 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Akash aloo Bhujia 900g" data-price="170" data-category="Namkeen/Chips">
+    <div class="product-card" data-name="Akash aloo Bhujia 900g" data-price="180" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.bbassets.com/media/uploads/p/xl/40278657_1-aakash-namkeen-alu-bhujia-authentic-flavour-taste.jpg" alt="Namkeen">
         </div>
         <div class="prod-info">
             <div class="prod-name">Akash aloo Bhujia 900g</div>
-            <div class="prod-price">₹170</div>
+            <div class="price-box">
+              <span class="mrp-price">₹265</span>
+              <span class="sell-price">₹180</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1286,13 +1398,17 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Akash lahsun sev 350g" data-price="75" data-category="Namkeen/Chips">
+    <div class="product-card" data-name="Akash lahsun sev 350g" data-price="80" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://aakashnamkeen.com/cdn/shop/products/Lahsun-Sev_800x.jpg?v=1674108521" >
         </div>
         <div class="prod-info">
             <div class="prod-name">Akash lahsun sev 350g</div>
-            <div class="prod-price">₹75</div>
+            <div class="price-box">
+              <span class="mrp-price">₹90</span>
+              <span class="sell-price">₹80</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1304,13 +1420,17 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Akash Soya sticks 180g" data-price="30" data-category="Namkeen/Chips">
+    <div class="product-card" data-name="Akash Soya sticks 180g" data-price="35" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqWiQ2xvLe2CBgYpFiarvFd-UBVKMZLadwxw&s" >
         </div>
         <div class="prod-info">
             <div class="prod-name">Akash Soya sticks 180g</div>
-            <div class="prod-price">₹30</div>
+            <div class="price-box">
+              <span class="mrp-price">₹65</span>
+              <span class="sell-price">₹35</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1322,13 +1442,17 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Balaji Chana jor garam 230g" data-price="25" data-category="Namkeen/Chips">
+    <div class="product-card" data-name="Balaji Chana jor garam 230g" data-price="40" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://jfkgrocery.com/cdn/shop/files/balaji-chanajorgaram.webp?v=1712425600" >
         </div>
         <div class="prod-info">
             <div class="prod-name">Balaji Chana jor garam 230g</div>
-            <div class="prod-price">₹25</div>
+            <div class="price-box">
+              <span class="mrp-price">₹45</span>
+              <span class="sell-price">₹40</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1340,13 +1464,17 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Balaji Gathia 300g" data-price="49" data-category="Namkeen/Chips">
+    <div class="product-card" data-name="Balaji Gathia 300g" data-price="50" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.balajiwafers.com/cdn/shop/files/Gathiya_Carousal_01_b77c88f7-e724-46b8-ab76-2ce50128e8a9.jpg?v=1746594633" >
         </div>
         <div class="prod-info">
             <div class="prod-name">Balaji Gathia 300g</div>
-            <div class="prod-price">₹49</div>
+            <div class="price-box">
+              <span class="mrp-price">₹55</span>
+              <span class="sell-price">₹50</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1364,7 +1492,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Balaji Crunchem Salty wafer chips 140g</div>
-            <div class="prod-price">₹36</div>
+            <div class="price-box">
+              <span class="mrp-price">₹40</span>
+              <span class="sell-price">₹36</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1376,13 +1508,17 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Balaji Teekha Mitha Mix 500g" data-price="82" data-category="Namkeen/Chips">
+    <div class="product-card" data-name="Balaji Teekha Mitha Mix 500g" data-price="79" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.bbassets.com/media/uploads/p/l/40053576_3-balaji-namkeen-tikha-mitha-mix.jpg">
         </div>
         <div class="prod-info">
             <div class="prod-name">Balaji Teekha Mitha Mix 500g</div>
-            <div class="prod-price">₹82</div>
+            <div class="price-box">
+              <span class="mrp-price">₹85</span>
+              <span class="sell-price">₹79</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1400,7 +1536,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Balaji Crunchem Cream and onion wafer chips 140g</div>
-            <div class="prod-price">₹36</div>
+            <div class="price-box">
+              <span class="mrp-price">₹40</span>
+              <span class="sell-price">₹36</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1418,7 +1558,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Balaji Crunchem Masala masti wafer chips 140g</div>
-            <div class="prod-price">₹36</div>
+            <div class="price-box">
+              <span class="mrp-price">₹40</span>
+              <span class="sell-price">₹36</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1436,7 +1580,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Balaji Crunchem Tomato twist wafer chips 140g</div>
-            <div class="prod-price">₹36</div>
+            <div class="price-box">
+              <span class="mrp-price">₹40</span>
+              <span class="sell-price">₹36</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1454,7 +1602,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Balaji wheelos masala 48g</div>
-            <div class="prod-price">₹9</div>
+            <div class="price-box">
+              <span class="mrp-price">₹10</span>
+              <span class="sell-price">₹9</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1472,7 +1624,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Kataria Barik Sev 200g</div>
-            <div class="prod-price">₹48</div>
+            <div class="price-box">
+              <span class="mrp-price">₹55</span>
+              <span class="sell-price">₹48</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1490,7 +1646,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Kataria Bhavnagri gathia 200g</div>
-            <div class="prod-price">₹48</div>
+            <div class="price-box">
+              <span class="mrp-price">₹60</span>
+              <span class="sell-price">₹48</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1508,7 +1668,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Kataria Mix 400g</div>
-            <div class="prod-price">₹95</div>
+            <div class="price-box">
+              <span class="mrp-price">₹120</span>
+              <span class="sell-price">₹95</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1526,7 +1690,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Kataria Boondi 400g</div>
-            <div class="prod-price">₹95</div>
+            <div class="price-box">
+              <span class="mrp-price">₹120</span>
+              <span class="sell-price">₹95</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1544,7 +1712,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Britania Little_Hearts_Biscuits_34 70G</div>
-            <div class="prod-price">₹27</div>
+            <div class="price-box">
+              <span class="mrp-price">₹30</span>
+              <span class="sell-price">₹27</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1562,7 +1734,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Bikaji Falahari mix 200g</div>
-            <div class="prod-price">₹48</div>
+            <div class="price-box">
+              <span class="mrp-price">₹75</span>
+              <span class="sell-price">₹48</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1574,13 +1750,17 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Bhujia sev 1 kg" data-price="250" data-category="Namkeen/Chips">
+    <div class="product-card" data-name="Haldiram Bhujia sev 1 kg" data-price="245" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.haldirams.com/media/catalog/product/cache/71134970afb779eb7860339989626b7e/b/l/blu081842.jpg">
         </div>
         <div class="prod-info">
             <div class="prod-name">Haldiram Bhujia sev 1 kg</div>
-            <div class="prod-price">₹250</div>
+            <div class="price-box">
+              <span class="mrp-price">₹275</span>
+              <span class="sell-price">₹245</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1598,7 +1778,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Haldiram All In One 200g</div>
-            <div class="prod-price">₹51</div>
+            <div class="price-box">
+              <span class="mrp-price">₹57</span>
+              <span class="sell-price">₹51</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1616,7 +1800,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Haldiram All In One 400g</div>
-            <div class="prod-price">₹99</div>
+            <div class="price-box">
+              <span class="mrp-price">₹115</span>
+              <span class="sell-price">₹105</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1628,13 +1816,17 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Aloo Bhujia 200g" data-price="47" data-category="Namkeen/Chips">
+    <div class="product-card" data-name="Haldiram Aloo Bhujia 200g" data-price="49" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://m.media-amazon.com/images/I/51NMSG3S2KL._SY300_SX300_QL70_FMwebp_.jpg">
         </div>
         <div class="prod-info">
             <div class="prod-name">Haldiram Aloo Bhujia 200g</div>
-            <div class="prod-price">₹47</div>
+            <div class="price-box">
+              <span class="mrp-price">₹55</span>
+              <span class="sell-price">₹49</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1646,13 +1838,17 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Aloo Bhujia 400g" data-price="86" data-category="Namkeen/Chips">
+    <div class="product-card" data-name="Haldiram Aloo Bhujia 400g" data-price="91" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.haldirams.com/media/catalog/product/cache/71134970afb779eb7860339989626b7e/b/l/blu08127_1.jpg">
         </div>
         <div class="prod-info">
             <div class="prod-name">Haldiram Aloo Bhujia 400g</div>
-            <div class="prod-price">₹86</div>
+            <div class="price-box">
+              <span class="mrp-price">₹100</span>
+              <span class="sell-price">₹91</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1670,7 +1866,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Haldiram Bhujia sev 200g</div>
-            <div class="prod-price">₹51</div>
+            <div class="price-box">
+              <span class="mrp-price">₹57</span>
+              <span class="sell-price">₹51</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1688,7 +1888,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Haldiram Bhujia sev 400g</div>
-            <div class="prod-price">₹103</div>
+            <div class="price-box">
+              <span class="mrp-price">₹114</span>
+              <span class="sell-price">₹103</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1700,13 +1904,17 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Khatta Meetha 1kg" data-price="195" data-category="Namkeen/Chips">
+    <div class="product-card" data-name="Haldiram Khatta Meetha 1kg" data-price="199" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5874-1768981931255&w=640&q=75">
         </div>
         <div class="prod-info">
             <div class="prod-name">Haldiram Khatta Meetha 1kg</div>
-            <div class="prod-price">₹195</div>
+           <div class="price-box">
+              <span class="mrp-price">₹230</span>
+              <span class="sell-price">₹199</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1718,13 +1926,17 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Khatta Meetha 400g" data-price="81" data-category="Namkeen/Chips">
+    <div class="product-card" data-name="Haldiram Khatta Meetha 400g" data-price="86" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5875-1768890172947&w=640&q=75">
         </div>
         <div class="prod-info">
             <div class="prod-name">Haldiram Khatta Meetha 400g</div>
-            <div class="prod-price">₹81</div>
+            <div class="price-box">
+              <span class="mrp-price">₹95</span>
+              <span class="sell-price">₹86</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1742,7 +1954,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Haldiram Khatta Meetha 220g</div>
-            <div class="prod-price">₹45</div>
+            <div class="price-box">
+              <span class="mrp-price">₹50</span>
+              <span class="sell-price">₹45</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1760,7 +1976,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Haldiram Lemon Bhel 200g</div>
-            <div class="prod-price">₹34</div>
+            <div class="price-box">
+              <span class="mrp-price">₹38</span>
+              <span class="sell-price">₹34</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1778,7 +1998,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Haldiram Lite Chiwda 200g</div>
-            <div class="prod-price">₹38</div>
+            <div class="price-box">
+              <span class="mrp-price">₹42</span>
+              <span class="sell-price">₹38</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1796,7 +2020,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Haldiram Mini Bhakarwadi 200g</div>
-            <div class="prod-price">₹56</div>
+            <div class="price-box">
+              <span class="mrp-price">₹62</span>
+              <span class="sell-price">₹56</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1814,7 +2042,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Haldiram Mixture snacks 200g</div>
-            <div class="prod-price">₹39</div>
+            <div class="price-box">
+              <span class="mrp-price">₹43</span>
+              <span class="sell-price">₹39</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1832,7 +2064,11 @@ body {
         </div>
         <div class="prod-info">
             <div class="prod-name">Haldiram Mixture snacks 400g</div>
-            <div class="prod-price">₹74</div>
+            <div class="price-box">
+              <span class="mrp-price">₹88</span>
+              <span class="sell-price">₹74</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1844,13 +2080,17 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Moongdal 1KG" data-price="241" data-category="Namkeen/Chips">
+    <div class="product-card" data-name="Haldiram Moongdal 1KG" data-price="240" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5886-1750839164995&w=640&q=75">
         </div>
         <div class="prod-info">
             <div class="prod-name">Haldiram Moongdal 1KG</div>
-            <div class="prod-price">₹241</div>
+            <div class="price-box">
+              <span class="mrp-price">₹265</span>
+              <span class="sell-price">₹240</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -1862,13 +2102,17 @@ body {
             </div>
         </div>
     </div>
-    <div class="product-card" data-name="Haldiram Murukku snacks 200g" data-price="56" data-category="Namkeen/Chips">
+    <div class="product-card" data-name="Haldiram Murukku snacks 200g" data-price="59" data-category="Namkeen/Chips">
         <div class="prod-img-box" onclick="zoomImage(this)">
             <img src="https://www.shubhamkmart.com/_next/image?url=https%3A%2F%2Fskmart-prod.s3.ap-south-1.amazonaws.com%2Fskm%2Fproduct-5887-1750839679479&w=640&q=75">
         </div>
         <div class="prod-info">
             <div class="prod-name">Haldiram Murukku snacks 200g</div>
-            <div class="prod-price">₹56</div>
+            <div class="price-box">
+              <span class="mrp-price">₹65</span>
+              <span class="sell-price">₹59</span>
+              <span class="discount-tag"></span>
+            </div>
             <div class="stock-text">Available: <span class="stock-val">100</span></div>
         </div>
         <div class="action-area">
@@ -5118,7 +5362,15 @@ body {
             background:rgba(255,255,255,0.25);
             padding:4px 10px;border-radius:8px;
             display:inline-block;margin-top:4px;">
-            Delivery: ₹0
+            Delivery &amp; Handling: ₹0
+        </div>
+
+        <div id="platform-fee"
+            style="font-size:15px;font-weight:800;color:#fff;
+            background:rgba(255,255,255,0.25);
+            padding:4px 10px;border-radius:8px;
+            display:inline-block;margin-top:4px;">
+            Platform Fee: ₹9.9
         </div>
 
         <div id="grand-total"
@@ -5134,8 +5386,8 @@ body {
 
    
     <div style="display: flex; gap: 10px;">
-        <input type="text" id="cust_name" class="input-pill" placeholder="Name">
-        <input type="tel" id="cust_phone" class="input-pill" placeholder="Phone">
+        <input type="text" id="cust_name" class="input-pill" placeholder="Name" oninput="validateForm()">
+        <input type="tel" id="cust_phone" class="input-pill" placeholder="Phone" oninput="validateForm()">
     </div>
  <div style="margin-bottom: 12px;">
     <input 
@@ -5144,8 +5396,20 @@ body {
         class="input-pill" 
         placeholder="Didn't find a product? Type here (optional)">
         <div class="location-card" id="location-card">
-        <div id="loc-text" style="font-size: 14px; font-weight: 700; color: var(--pp-red);">📍 Location Required</div>
-        <button class="loc-btn" id="loc-btn" onclick="getLocation()">Allow Live Location</button>
+        <div id="loc-text" style="font-size: 14px; font-weight: 700; color: var(--pp-red); margin-bottom:10px;">📍 Location Required</div>
+        <!-- Toggle Tabs -->
+        <div style="display:flex; gap:8px; margin-bottom:12px;">
+            <button id="tab-gps" onclick="switchLocTab('gps')" style="flex:1; padding:9px; border-radius:10px; border:2px solid var(--pp-orange); background:var(--pp-orange); color:#fff; font-weight:700; font-size:14px; cursor:pointer;">📡 Use GPS</button>
+            <button id="tab-manual" onclick="switchLocTab('manual')" style="flex:1; padding:9px; border-radius:10px; border:2px solid #ddd; background:#fff; color:#555; font-weight:700; font-size:14px; cursor:pointer;">✏️ Type Address</button>
+        </div>
+        <!-- GPS Section -->
+        <div id="gps-section">
+            <button class="loc-btn" id="loc-btn" onclick="getLocation()">Allow Live Location</button>
+        </div>
+        <!-- Manual Section -->
+        <div id="manual-section" style="display:none;">
+            <input type="text" id="manual-address" class="input-pill" placeholder="Enter your full delivery address..." oninput="onManualAddress()" style="margin-bottom:0;">
+        </div>
     </div>
 
 </div>
@@ -5205,6 +5469,15 @@ document.querySelectorAll('.price-box').forEach(box => {
             const name = card.getAttribute('data-name').toLowerCase();
             card.style.display = name.includes(input) ? "flex" : "none";
         });
+    }
+
+    function toggleCategoryBar(value) {
+        const categoryBar = document.getElementById('category-bar');
+        if (value.length > 0) {
+            categoryBar.style.display = 'none'; // hide while searching
+        } else {
+            categoryBar.style.display = 'flex'; // show when search cleared
+        }
     }
 
     function getLocation() {
@@ -5284,14 +5557,16 @@ document.querySelectorAll('.price-box').forEach(box => {
     });
 
     const delivery = getDeliveryCharge(total);
-    const grandTotal = total + delivery;
+    const platformFee = 9.9;
+    const grandTotal = total + delivery + platformFee;
 
     // DRAWER AUTO-OPEN LOGIC
     
     document.getElementById('cart-summary').style.display = count > 0 ? 'flex' : 'none';
     document.getElementById('items-count').innerText = `${count} Items`;
     document.getElementById('total-amount').innerText = `Subtotal: ₹${total}`;
-    document.getElementById('delivery-charge').innerText = `Delivery: ₹${delivery}`;
+    document.getElementById('delivery-charge').innerText = `Delivery & Handling: ₹${delivery}`;
+    document.getElementById('platform-fee').innerText = `Platform Fee: ₹${platformFee}`;
     document.getElementById('grand-total').innerText = `Grand Total: ₹${grandTotal}`;
 
     validateForm();
@@ -5333,6 +5608,7 @@ document.querySelectorAll('.price-box').forEach(box => {
 
     let list = "";
     let total = 0;
+    let firebaseItems = [];
 
     document.querySelectorAll('.product-card').forEach(card => {
         const qty = parseInt(card.querySelector('.qty-val').innerText);
@@ -5342,6 +5618,7 @@ document.querySelectorAll('.price-box').forEach(box => {
             const subtotal = price * qty;
             total += subtotal;
             list += `• ${pname}\n   ₹${price} x ${qty} = ₹${subtotal}\n`;
+            firebaseItems.push({ name: pname, price: price, quantity: qty, subtotal: subtotal });
         }
     });
 
@@ -5350,9 +5627,27 @@ document.querySelectorAll('.price-box').forEach(box => {
         otherText = `\n📝 *Requested Product:*\n• ${otherProduct}\n`;
     }
 
-    const mapsLink = `https://www.google.com/maps?q=${userCoords.lat},${userCoords.lng}`;
+    const mapsLink = userCoords.manual
+        ? `📝 Manual Address: ${userCoords.manual}`
+        : `https://www.google.com/maps?q=${userCoords.lat},${userCoords.lng}`;
     const delivery = getDeliveryCharge(total);
-const grandTotal = total + delivery;
+    const platformFee = 9.9;
+    const grandTotal = total + delivery + platformFee;
+
+    // Save to Supabase via customer.js
+    const orderData = {
+        customerName: name,
+        customerPhone: phone,
+        items: firebaseItems,
+        customRequest: otherProduct,
+        subtotal: total,
+        deliveryCharge: delivery,
+        grandTotal: grandTotal,
+        location: userCoords.manual ? userCoords.manual : mapsLink,
+        date: new Date().toISOString(),
+        status: "Pending"
+    };
+    window.dispatchEvent(new CustomEvent("saveToFirebase", { detail: orderData }));
 
 
     const text =
@@ -5365,7 +5660,8 @@ const grandTotal = total + delivery;
 ${list}${otherText}
 ----------------------
 *Subtotal:* ₹${total}
-*Delivery Charge:* ₹${delivery}
+*Delivery & Handling:* ₹${delivery}
+*Platform Fee:* ₹${platformFee}
 *GRAND TOTAL:* ₹${grandTotal}
 
 📍 *Delivery Location:*
@@ -5376,6 +5672,88 @@ const whatsappNumber = "919826915121"; // ← YOUR NUMBER
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
     window.open(whatsappURL, "_blank");
 }
+// ===== MENU =====
+function openMenu() {
+    const m = document.getElementById('menuModal');
+    m.style.display = 'flex';
+    showMenuPanel('menu-home');
+}
+function closeMenu() {
+    document.getElementById('menuModal').style.display = 'none';
+}
+function showMenuPanel(id) {
+    ['menu-home','feedback-panel','helpdesk-panel'].forEach(p => {
+        document.getElementById(p).style.display = 'none';
+    });
+    document.getElementById(id).style.display = 'block';
+    if (id === 'menu-home') document.getElementById('fb-status').innerText = '';
+}
+document.getElementById('menuModal').addEventListener('click', function(e) {
+    if (e.target === this) closeMenu();
+});
+
+// ===== FEEDBACK =====
+function sendFeedback() {
+    const from    = document.getElementById('fb-from').value.trim();
+    const comment = document.getElementById('fb-comment').value.trim();
+    const status  = document.getElementById('fb-status');
+    if (!from || !comment) {
+        status.innerText = '⚠️ Please fill in all fields.';
+        status.style.color = '#e74c3c';
+        return;
+    }
+    const subject = encodeURIComponent('PPCART Customer Feedback');
+    const body    = encodeURIComponent(`From: ${from}\n\n${comment}`);
+    window.open(`mailto:ppcartfeedback@gmail.com?subject=${subject}&body=${body}`, '_blank');
+    status.innerText = '✅ Opening your email app...';
+    status.style.color = '#27ae60';
+}
+
+// ===== LOCATION TAB SWITCH =====
+function switchLocTab(tab) {
+    const gpsBtn    = document.getElementById('tab-gps');
+    const manBtn    = document.getElementById('tab-manual');
+    const gpsSection = document.getElementById('gps-section');
+    const manSection = document.getElementById('manual-section');
+    const locText   = document.getElementById('loc-text');
+
+    if (tab === 'gps') {
+        gpsBtn.style.cssText = 'flex:1;padding:9px;border-radius:10px;border:2px solid var(--pp-orange);background:var(--pp-orange);color:#fff;font-weight:700;font-size:14px;cursor:pointer;';
+        manBtn.style.cssText = 'flex:1;padding:9px;border-radius:10px;border:2px solid #ddd;background:#fff;color:#555;font-weight:700;font-size:14px;cursor:pointer;';
+        gpsSection.style.display = 'block';
+        manSection.style.display = 'none';
+        userCoords = null;
+        document.getElementById('manual-address').value = '';
+        locText.innerText = '📍 Location Required';
+        locText.style.color = 'var(--pp-red)';
+        document.getElementById('loc-btn').style.display = 'block';
+    } else {
+        manBtn.style.cssText = 'flex:1;padding:9px;border-radius:10px;border:2px solid var(--pp-orange);background:var(--pp-orange);color:#fff;font-weight:700;font-size:14px;cursor:pointer;';
+        gpsBtn.style.cssText = 'flex:1;padding:9px;border-radius:10px;border:2px solid #ddd;background:#fff;color:#555;font-weight:700;font-size:14px;cursor:pointer;';
+        gpsSection.style.display = 'none';
+        manSection.style.display = 'block';
+        userCoords = null;
+        locText.innerText = '✏️ Enter Address Manually';
+        locText.style.color = '#555';
+    }
+    validateForm();
+}
+
+function onManualAddress() {
+    const addr    = document.getElementById('manual-address').value.trim();
+    const locText = document.getElementById('loc-text');
+    if (addr.length > 5) {
+        userCoords = { manual: addr };
+        locText.innerText = '✅ Address entered!';
+        locText.style.color = 'var(--pp-green)';
+    } else {
+        userCoords = null;
+        locText.innerText = '✏️ Enter Address Manually';
+        locText.style.color = '#555';
+    }
+    validateForm();
+}
+
 let drawerOpen = false;
 
 function toggleDrawer() {
@@ -5411,5 +5789,9 @@ function filterCategory(event, category) {
 
 
 </script>
+
+<!-- ✅ Supabase Order Saving -->
+<script type="module" src="customer.js"></script>
+
 </body>
 </html>
