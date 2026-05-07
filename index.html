@@ -5370,7 +5370,7 @@ body {
             background:rgba(255,255,255,0.25);
             padding:4px 10px;border-radius:8px;
             display:inline-block;margin-top:4px;">
-            Platform Fee: ₹9.9
+            Platform Fee: ₹8
         </div>
 
         <div id="grand-total"
@@ -5440,12 +5440,17 @@ document.querySelectorAll('.price-box').forEach(box => {
 <script>
     
     function getDeliveryCharge(total) {
-    if (total >= 80 && total <= 499) return 39;
-    if (total >= 500 && total <= 999) return 49;
-    if (total >= 1000 && total <= 2499) return 69;
-    if (total >= 2500 && total <= 4999) return 89;
-    if (total >= 5000 && total <= 10000) return 99;
-    if (total > 10000) return 149;
+    if (total >= 80 && total <= 249) return 19;
+    if (total >= 250 && total <= 499) return 29;
+    if (total >= 500 && total <= 749) return 39;
+    if (total >= 750 && total <= 999) return 49;
+    if (total >= 1000 && total <= 1499) return 59;
+    if (total >= 1500 && total <= 1999) return 69;
+    if (total >= 2000 && total <= 2499) return 79;
+    if (total >= 2500 && total <= 2999) return 89;
+    if (total >= 3000 && total <= 4899) return 99;
+    if (total >= 4900 && total <= 9990) return 109;
+    if (total > 9990) return 141;
     return 0;
 }
 
@@ -5557,7 +5562,7 @@ document.querySelectorAll('.price-box').forEach(box => {
     });
 
     const delivery = getDeliveryCharge(total);
-    const platformFee = 9.9;
+    const platformFee = 8;
     const grandTotal = total + delivery + platformFee;
 
     // DRAWER AUTO-OPEN LOGIC
@@ -5631,7 +5636,7 @@ document.querySelectorAll('.price-box').forEach(box => {
         ? `📝 Manual Address: ${userCoords.manual}`
         : `https://www.google.com/maps?q=${userCoords.lat},${userCoords.lng}`;
     const delivery = getDeliveryCharge(total);
-    const platformFee = 9.9;
+    const platformFee = 8;
     const grandTotal = total + delivery + platformFee;
 
     // Save to Supabase via customer.js
